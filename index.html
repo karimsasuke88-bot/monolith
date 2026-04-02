@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONOLITH | Modern Tech & Everyday Carry</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬛</text></svg>">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f6;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            padding-top: 40px;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin: 0;
+            font-weight: 300;
+            color: #000;
+        }
+
+        .sub-header {
+            font-size: 0.7rem;
+            color: #999;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            display: block;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+
+        .gallery-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 100px;
+            align-items: center;
+        }
+
+        .gallery-item:nth-child(even) {
+            direction: rtl;
+        }
+        .gallery-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .item-image-box {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background-color: #fff; 
+            position: relative;
+            padding: 30px; 
+            box-sizing: border-box;
+        }
+
+        .item-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; 
+            transition: transform 0.5s ease;
+        }
+        
+        .item-image-box:hover .item-image {
+            transform: scale(1.03);
+        }
+
+        .item-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 6px 12px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            z-index: 10;
+        }
+
+        .item-info {
+            padding: 20px;
+        }
+
+        .item-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: #ddd;
+            line-height: 1;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .item-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0 0 20px 0;
+            color: #000;
+        }
+
+        .item-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .item-trust {
+            font-size: 0.75rem;
+            color: #888;
+            margin-bottom: 25px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        .item-trust span {
+            margin-right: 15px;
+        }
+
+        .btn-view {
+            display: inline-block;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #000;
+            border: 1px solid #000;
+            background-color: transparent;
+            transition: all 0.3s;
+        }
+
+        .btn-view:hover {
+            color: #fff;
+            background-color: #000;
+        }
+
+        /* JOURNAL STYLES */
+        .journal-section {
+            margin-top: 100px;
+            border-top: 1px solid #ddd;
+            padding-top: 60px;
+        }
+        
+        .journal-header {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            text-align: center;
+            color: #000;
+        }
+
+        .journal-item {
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .journal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .journal-title a {
+            color: #000;
+            text-decoration: none;
+        }
+        
+        .journal-title a:hover {
+            text-decoration: underline;
+        }
+
+        .journal-excerpt {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #ddd;
+            font-size: 0.6rem;
+            color: #ccc;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding-bottom: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .gallery-item {
+                grid-template-columns: 1fr;
+            }
+            .gallery-item:nth-child(even) {
+                direction: ltr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>MONOLITH</h1>
+        <span class="sub-header">Modern Tech & Everyday Carry</span>
+    </header>
+
+    <!-- PRODUCT 01: THE SPACE VOYAGER (AMAZON) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Amazon Pick</div>
+            <img src="https://i.ibb.co/ZRMZgqHy/71mld-UX2-ELL-AC-SL1500.jpg" class="item-image" alt="Astronaut Galaxy Projector">
+        </div>
+        <div class="item-info">
+            <div class="item-number">01</div>
+            <h3 class="item-title">The Space Voyager</h3>
+            <p class="item-desc">A compact galaxy projector in the shape of an astronaut. Projects a stunning nebula and star field onto any ceiling. Doubles as a decorative figure for your shelf.</p>
+            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Best Seller</span></div>
+            <a href="https://amzn.to/4lYPTtT" target="_blank" class="btn-view">Check Price on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 02: THE GOLDEN HOUR (AMAZON) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Viral</div>
+            <img src="https://i.ibb.co/LXLHvbnS/71-Q-ZEUu-AZL-AC-SL1500.jpg" class="item-image" alt="Sunset Lamp">
+        </div>
+        <div class="item-info">
+            <div class="item-number">02</div>
+            <h3 class="item-title">The Golden Hour</h3>
+            <p class="item-desc">Transforms a lonely room into a warm sanctuary. Projects a stunning sunset effect on any wall. Instantly changes the mood of your space.</p>
+            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Top Rated</span></div>
+            <a href="https://amzn.to/4s9JEoB" target="_blank" class="btn-view">Check Price on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 03: THE SILENT MECHANIC (AMAZON) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Best Value</div>
+            <img src="https://i.ibb.co/WNy2bY5L/71-Tg-Ffc-G96-L-AC-SL1500.jpg" class="item-image" alt="Mechanical Keyboard">
+        </div>
+        <div class="item-info">
+            <div class="item-number">03</div>
+            <h3 class="item-title">The Silent Mechanic</h3>
+            <p class="item-desc">A clean, white 60% mechanical keyboard. Red linear switches provide smooth, quiet typing—perfect for late-night work or gaming. Compact design saves desk space.</p>
+            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Top Rated</span></div>
+            <a href="https://amzn.to/3O8WUMg" target="_blank" class="btn-view">Check Price on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 04: THE POWER GRID (AMAZON) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Essential</div>
+            <img src="https://i.ibb.co/Z1RCdgKc/81g-Nvt5wlz-L-AC-SL1500.jpg" class="item-image" alt="USB C Charging Station">
+        </div>
+        <div class="item-info">
+            <div class="item-number">04</div>
+            <h3 class="item-title">The Power Grid</h3>
+            <p class="item-desc">A 10-port GaN III charging station. 320W total power output with 65W PD for laptops. Eliminates cable clutter by charging all your devices from one single plug.</p>
+            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ High Power</span></div>
+            <a href="https://amzn.to/4lYevmu" target="_blank" class="btn-view">Check Price on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 05: THE SCREEN SHIELD (AMAZON) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Health Essential</div>
+            <img src="https://i.ibb.co/N2yPW12j/71r-Wignils-L-AC-SX679.jpg" class="item-image" alt="Blue Light Glasses">
+        </div>
+        <div class="item-info">
+            <div class="item-number">05</div>
+            <h3 class="item-title">The Screen Shield</h3>
+            <p class="item-desc">Stylish blue light blocking glasses. Reduces eye strain and prevents headaches from long screen hours. Includes two frame styles (Black and Clear) to match your look.</p>
+            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ 2-Pack Included</span></div>
+            <a href="https://amzn.to/4v3Qe2q" target="_blank" class="btn-view">Check Price on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 06: THE ATMOSPHERE ENGINE (AMAZON - NEW) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Best Seller</div>
+            <img src="https://i.ibb.co/KpvmMvNh/71tjd-Zg28v-L-AC-SL1500.jpg" class="item-image" alt="Govee RGBIC LED Strip Lights">
+        </div>
+        <div class="item-info">
+            <div class="item-number">06</div>
+            <h3 class="item-title">The Atmosphere Engine</h3>
+            <p class="item-desc">You can buy expensive furniture, but bad lighting will still ruin the room. This strip fixes the "flatness" instantly. It projects multiple colors simultaneously to create a layered, immersive atmosphere.</p>
+            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ 10K+ Bought</span></div>
+            <a href="https://amzn.to/3OdQbRa" target="_blank" class="btn-view">Check Price on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 07: THE PLANTER (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Trending</div>
+            <img src="https://i.ibb.co/bgXgQnxz/S8bf5ea31008d4bf28d1ca82254a4d672h.png" class="item-image" alt="Minimalist Planter">
+        </div>
+        <div class="item-info">
+            <div class="item-number">07</div>
+            <h3 class="item-title">The Desktop Oasis</h3>
+            <p class="item-desc">Minimalist resin planter for succulents. Heavy base, clean lines. Brings life to the workspace.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c4sjIa3p" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 08: THE AURORA PROJECTOR (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Under $10</div>
+            <img src="https://i.ibb.co/sJDLkTSK/Sfc15756570e24adbacb8c20fe9ff4f24-V.avif" class="item-image" alt="Northern Lights Projector">
+        </div>
+        <div class="item-info">
+            <div class="item-number">08</div>
+            <h3 class="item-title">The Aurora Night Light</h3>
+            <p class="item-desc">LED Northern Lights Projection Lamp with remote. USB powered color-changing effect. Transforms bedroom atmosphere for under $10.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c3m5zOEZ" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 09: THE KEYCAPS (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Best Seller</div>
+            <img src="https://i.ibb.co/ccMVD5SW/Sd2b6b1b2e84e40d5853d89f49ea71dd7c.png" class="item-image" alt="Keycaps">
+        </div>
+        <div class="item-info">
+            <div class="item-number">09</div>
+            <h3 class="item-title">The Artisan Keycaps</h3>
+            <p class="item-desc">Retro "Latte" colored PBT keycaps. Turns a generic keyboard into a custom masterpiece.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c2I17rVZ" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 10: THE INFINITY CUBE (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Popular</div>
+            <img src="https://i.ibb.co/6cqKxkxH/S169aa569027747daa10b67999e064aa6f.avif" class="item-image" alt="Cube">
+        </div>
+        <div class="item-info">
+            <div class="item-number">10</div>
+            <h3 class="item-title">The Kinetic Cube</h3>
+            <p class="item-desc">Folding aluminum fidget toy. Solid, heavy, and satisfying. Calms the mind.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c4axzlTz" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 11: THE GRAFFITI BEAR (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <img src="https://i.ibb.co/xqf0zj8S/S12418d775cd3418a84cc471a554593e68.avif" class="item-image" alt="Bear">
+        </div>
+        <div class="item-info">
+            <div class="item-number">11</div>
+            <h3 class="item-title">The Graffiti Guardian</h3>
+            <p class="item-desc">Urban street art statue. Functional key holder. A statement piece for the entryway.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c3b78xpv" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 12: THE SAKURA MAT (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Top Pick</div>
+            <img src="https://i.ibb.co/dwjY0n2Y/Sc1e8c54c918147f79ebfb506f619f07d-C.avif" class="item-image" alt="Mat">
+        </div>
+        <div class="item-info">
+            <div class="item-number">12</div>
+            <h3 class="item-title">The Sakura Canvas</h3>
+            <p class="item-desc">Large minimalist desk mat with Japanese Sakura print. The foundation of a clean setup.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c3pFY6Ar" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 13: THE WALLET (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Trending</div>
+            <img src="https://i.ibb.co/VchnSPyY/S22a936eaa6de44648e3dd322f8e3659c-A.avif" class="item-image" alt="Wallet">
+        </div>
+        <div class="item-info">
+            <div class="item-number">13</div>
+            <h3 class="item-title">The Industrial Carry</h3>
+            <p class="item-desc">Minimalist metal pop-up wallet. RFID blocking. Slim, sleek, and secure.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c2yuKh4B" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 14: THE EARMUFFS (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <img src="https://i.ibb.co/sJXMTjJY/S2be48307d4c843c0ac8130957c2352c2-Y.avif" class="item-image" alt="Earmuffs">
+        </div>
+        <div class="item-info">
+            <div class="item-number">14</div>
+            <h3 class="item-title">The Tactical Shield</h3>
+            <p class="item-desc">Active noise cancellation for shooting. Sound amplification tech. Professional grade.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c2Qf1RBz" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 15: THE HOLOGRAM DISPLAY (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <img src="https://i.ibb.co/QjJXh0jj/Sb2572956b27b4843bd050ded899cf1a5-V.avif" class="item-image" alt="Hologram Display">
+        </div>
+        <div class="item-info">
+            <div class="item-number">15</div>
+            <h3 class="item-title">The Hologram Display</h3>
+            <p class="item-desc">Floating 3D visuals in mid-air. No screen, just light. A cyberpunk essential for any setup.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c2QEG90b" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 16: THE ERGONOMIC MOUSE (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <img src="https://i.ibb.co/y3WRzXM/S56b58b5296844cc69c2f3391ce1a1af5-W.avif" class="item-image" alt="Ergonomic Mouse">
+        </div>
+        <div class="item-info">
+            <div class="item-number">16</div>
+            <h3 class="item-title">The Handshake Mouse</h3>
+            <p class="item-desc">Vertical ergonomic design saves your wrist. Silent clicks for late night work. Connects to 3 devices.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c3u4jtd7" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div> 
+
+    <!-- PRODUCT 17: THE BROADCAST ARM (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <img src="https://i.ibb.co/fdZVsxQH/S5d6583a43daf4d8f94a9f329b2d6f424q.avif" class="item-image" alt="Mic Stand">
+        </div>
+        <div class="item-info">
+            <div class="item-number">17</div>
+            <h3 class="item-title">The Broadcast Arm</h3>
+            <p class="item-desc">Low-profile boom arm. Frees up desk space. Makes you look like a pro streamer.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c4Nv4YHr" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 18: THE HOLOGRAM PRO (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <img src="https://i.ibb.co/N61DHrcX/S5788ab5a1514455db17035364a6b4240-I.avif" class="item-image" alt="Hologram Pro">
+        </div>
+        <div class="item-info">
+            <div class="item-number">18</div>
+            <h3 class="item-title">The Hologram Pro</h3>
+            <p class="item-desc">High-resolution holographic player. Displays custom videos and images in mid-air.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c3TVQPJP" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>  
+
+   <!-- PRODUCT 19: THE GAMING HEADSET (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <img src="https://i.ibb.co/7NWq71kw/S61b6cd765bd04e91974d34562f11c7a61.avif" class="item-image" alt="Gaming Headset">
+        </div>
+        <div class="item-info">
+            <div class="item-number">19</div>
+            <h3 class="item-title">The Audio Edge</h3>
+            <p class="item-desc">7.1 Surround Sound. RGB lighting. Clear mic. Professional gaming audio.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c31VvGoN" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>
+
+       <!-- PRODUCT 20: THE MOONLIGHT CANVAS (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <img src="https://i.ibb.co/C3yx4D6s/Sf51af3fc369f4bc890a89031c47a4ddf-U.avif" class="item-image" alt="Moonlight Desk Mat">
+        </div>
+        <div class="item-info">
+            <div class="item-number">20</div>
+            <h3 class="item-title">The Moonlight Canvas</h3>
+            <p class="item-desc">Dark aesthetic desk mat with moonlight design. Non-slip base. Perfect for night mode setups.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c2QUpDVP" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div> 
+    
+    <!-- PRODUCT 21: THE FOCUS BEAM (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">New Arrival</div>
+            <img src="https://i.ibb.co/213jddHf/Sc95fa33856964b88ad9c1e8926a89650o.avif" class="item-image" alt="Monitor Light Bar">
+        </div>
+        <div class="item-info">
+            <div class="item-number">21</div>
+            <h3 class="item-title">The Focus Beam</h3>
+            <p class="item-desc">Clamps directly to the monitor. Zero desk footprint. Stepless dimming protects your eyes during late-night sessions. Essential for work and gaming.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c3alLZ1J" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 22: THE ORGANIZER (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Problem Solver</div>
+            <img src="https://i.ibb.co/Kxv2ksqS/S086d29ebd24e48b29163deb0392350c9-Y.avif" class="item-image" alt="Label Maker">
+        </div>
+        <div class="item-info">
+            <div class="item-number">22</div>
+            <h3 class="item-title">The Organizer</h3>
+            <p class="item-desc">Bluetooth thermal printer. Prints clear, adhesive labels in seconds. Perfect for cable management and storage. No ink required.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c2vT66yh" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>  
+
+    <!-- PRODUCT 23: THE CLARITY BAR (ALIEXPRESS) -->
+    <div class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Essential</div>
+            <img src="https://i.ibb.co/VcCStrR8/S86f60c88e76f4319aea2fbb8fd3206b3-J.avif" class="item-image" alt="Monitor Light Bar">
+        </div>
+        <div class="item-info">
+            <div class="item-number">23</div>
+            <h3 class="item-title">The Clarity Bar</h3>
+            <p class="item-desc">CCT adjustable monitor light bar. Touch dimming eliminates eye strain. No screen glare. Perfect for late nights.</p>
+            <div class="item-trust"><span>✓ Worldwide Shipping</span> <span>✓ Secure Checkout</span></div>
+            <a href="https://s.click.aliexpress.com/e/_c3KZuqHR" target="_blank" class="btn-view">Check Deal Price</a>
+        </div>
+    </div>
+
+    <!-- JOURNAL SECTION -->
+    <div class="journal-section">
+        <div class="journal-header">Curator's Notes</div>
+
+        <!-- Note 01 -->
+        <div class="journal-item">
+            <h3 class="journal-title"><a href="#">The myth of the "minimalist" wallet.</a></h3>
+            <p class="journal-excerpt">We carry too much. Receipts from three years ago, library cards we never use. I switched to a metal card holder (The Industrial Carry) two years ago. It forced me to declutter. Now, I only carry what I need. The aesthetic is brutalist, but the function is pure freedom. It’s not just a wallet; it’s a discipline.</p>
+        </div>
+
+        <!-- Note 02 -->
+        <div class="journal-item">
+            <h3 class="journal-title"><a href="#">Why your desk mat matters more than your desk.</a></h3>
+            <p class="journal-excerpt">Most desks are ugly. They are particle board or scratched wood. A good desk mat (like The Sakura Canvas) covers the sins. It provides the "foundation." It’s the first thing your wrist touches. If it feels cheap, the whole setup feels cheap. If it’s thick and textured, the whole room feels designed.</p>
+        </div>
+
+        <!-- Note 03 -->
+        <div class="journal-item">
+            <h3 class="journal-title"><a href="#">The invisible upgrade: Monitor Lighting.</a></h3>
+            <p class="journal-excerpt">Working in a dark room with a bright screen is a guaranteed way to burn out your eyes. We often focus on the specs of the monitor, but ignore the environment around it. Adding a bias light (The Clarity Bar) reduces the contrast strain instantly. It’s the health upgrade nobody talks about until they get headaches.</p>
+        </div>
+        
+        <!-- Note 04 -->
+        <div class="journal-item">
+            <h3 class="journal-title"><a href="#">The utility of the "useless" toy.</a></h3>
+            <p class="journal-excerpt">Why sell a Kinetic Cube? Because focus isn't about staring at a screen harder. It's about fidgeting. It's about occupying the restless part of your brain so the logical part can work. A solid aluminum fidget toy is a tool for thinkers, not just a distraction.</p>
+        </div>
+
+        <!-- Note 05 -->
+        <div class="journal-item">
+            <h3 class="journal-title"><a href="#">Silence is a feature.</a></h3>
+            <p class="journal-excerpt">I used to think mouse clicks didn't matter. Then I worked in a shared space. The constant *click-click-click* drives people insane. Switching to a silent ergonomic mouse (The Handshake) changed my relationship with late-night work. It saves my wrist, yes, but it also saves the vibe of the room.</p>
+        </div>
+
+        <!-- Note 06 -->
+        <div class="journal-item">
+            <h3 class="journal-title"><a href="#">Living things on a dead screen.</a></h3>
+            <p class="journal-excerpt">A workspace full of screens is sterile. It lacks life. Adding a single succulent (The Desktop Oasis) changes the energy of a room. It’s a small anchor to the real world amidst the digital chaos. Plus, it forces you to look at something green every hour, which is better for your vision.</p>
+        </div>
+
+        <!-- Note 07 -->
+        <div class="journal-item">
+            <h3 class="journal-title"><a href="#">The ritual of the entryway.</a></h3>
+            <p class="journal-excerpt">The first thing you do when you walk in the door shouldn't be throwing your keys on a random table. That creates visual noise. The Graffiti Guardian creates a ritual. Keys go on the bear. Wallet goes in the tray. It creates order before you even sit down.</p>
+        </div>
+
+        <!-- Note 08 -->
+        <div class="journal-item">
+            <h3 class="journal-title"><a href="#">The hologram paradox.</a></h3>
+            <p class="journal-excerpt">We spend thousands on 4K screens, but the most arresting visuals often come from simple light and reflection. The Hologram Display feels like a glitch in reality. It’s not "high resolution" in the traditional sense, but it grabs attention more than any photo. It proves that light is a material.</p>
+        </div>
+
+        <!-- Note 09 -->
+        <div class="journal-item">
+            <h3 class="journal-title"><a href="#">Sound over specs.</a></h3>
+            <p class="journal-excerpt">Gamers obsess over frames per second, but they ignore audio. A surround sound headset (The Audio Edge) changes your spatial awareness in a game. You hear footsteps behind you. You hear the wind direction. It makes you a better player, not just a more entertained one.</p>
+        </div>
+
+        <!-- Note 10 -->
+        <div class="journal-item">
+            <h3 class="journal-title"><a href="#">Cable management is mental management.</a></h3>
+            <p class="journal-excerpt">Visual clutter leads to mental clutter. If your eyes scan a mess of wires every time you look up, your brain is processing that mess. The Broadcast Arm and label makers aren't just for aesthetics; they are for clearing the cache in your brain. A clean desk is a fast mind.</p>
+        </div>
+
+    </div>
+    <!-- JOURNAL SECTION END -->
+
+    <!-- FOOTER START -->
+    <footer>
+        <!-- DISCLAIMER -->
+        <div style="max-width: 600px; margin: 0 auto 30px; text-align: center;">
+            <p style="font-size: 0.7rem; color: #555; line-height: 1.5; margin: 0;">
+                <strong>Disclosure:</strong> Monolith is a participant in the Amazon Services LLC Associates Program and the AliExpress Affiliate Program.
+            </p>
+        </div>
+
+        <!-- LEGAL LINKS -->
+        <div style="margin-bottom: 20px; font-size: 0.7rem;">
+            <a href="privacy.html" style="color: #999; text-decoration: none; margin: 0 10px;">Privacy Policy</a> |
+            <a href="terms.html" style="color: #999; text-decoration: none; margin: 0 10px;">Terms of Service</a> |
+            <a href="mailto:monolith.finds@gmail.com" style="color: #999; text-decoration: none; margin: 0 10px;">Contact</a>
+        </div>
+
+        MONOLITH &copy; 2026
+    </footer>
+    <!-- FOOTER END -->
+
+</div>
+
+</body>
+</html>
