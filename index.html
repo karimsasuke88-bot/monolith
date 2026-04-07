@@ -9,7 +9,7 @@
     <!-- FAVICON -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬛</text></svg>">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -17,25 +17,25 @@
             color: #1a1a1a;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.7; /* Increased for readability */
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px; /* Slightly wider */
             margin: 0 auto;
             padding: 40px 20px;
         }
 
         header {
             text-align: center;
-            margin-bottom: 80px;
-            padding-top: 40px;
+            margin-bottom: 60px;
+            padding-top: 60px;
         }
 
         h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            letter-spacing: 8px;
+            font-size: 4.5rem;
+            letter-spacing: 10px;
             text-transform: uppercase;
             margin: 0;
             font-weight: 300;
@@ -47,17 +47,43 @@
             color: #999;
             letter-spacing: 4px;
             text-transform: uppercase;
-            margin-top: 10px;
+            margin-top: 15px;
             display: block;
             border-top: 1px solid #ddd;
             padding-top: 15px;
         }
 
+        /* NEW: SECTION HEADERS */
+        .category-header {
+            margin-top: 100px;
+            margin-bottom: 50px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 20px;
+        }
+        .category-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #000;
+            font-weight: 600;
+            margin: 0;
+        }
+        .category-sub {
+            display: block;
+            font-size: 0.7rem;
+            color: #999;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
         .gallery-item {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 100px;
+            gap: 60px; /* More breathing room */
+            margin-bottom: 80px;
             align-items: center;
         }
 
@@ -74,19 +100,21 @@
             overflow: hidden;
             background-color: #fff; 
             position: relative;
-            padding: 30px; 
+            padding: 40px; /* More padding inside image */
             box-sizing: border-box;
+            border: 1px solid #e5e5e5; /* Subtle frame */
+            border-radius: 2px;
         }
 
         .item-image {
             width: 100%;
             height: 100%;
             object-fit: contain; 
-            transition: transform 0.5s ease;
+            transition: transform 0.6s ease, filter 0.6s ease;
         }
         
         .item-image-box:hover .item-image {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
 
         .item-badge {
@@ -104,54 +132,61 @@
         }
 
         .item-info {
-            padding: 20px;
+            padding: 10px 0; /* Removed side padding for cleaner look */
         }
 
         .item-number {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            color: #ddd;
+            font-size: 3.5rem;
+            color: #eee;
             line-height: 1;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: 600;
         }
 
         .item-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
+            font-size: 2.2rem; /* Larger title */
             font-weight: 600;
             margin: 0 0 20px 0;
             color: #000;
+            line-height: 1.2;
         }
 
         .item-desc {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 10px;
+            font-size: 0.95rem; /* Larger text */
+            color: #555; /* Darker grey for better readability */
+            margin-bottom: 15px;
             font-weight: 300;
         }
 
         .item-trust {
             font-size: 0.75rem;
             color: #888;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-weight: 400;
             letter-spacing: 0.5px;
         }
         .item-trust span {
             margin-right: 15px;
+            display: inline-block;
+        }
+        .item-trust span::before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
         }
 
         .btn-view {
             display: inline-block;
-            padding: 12px 25px;
+            padding: 14px 30px;
             text-decoration: none;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #000;
-            border: 1px solid #000;
+            border: 2px solid #000;
             background-color: transparent;
             transition: all 0.3s;
         }
@@ -159,6 +194,24 @@
         .btn-view:hover {
             color: #fff;
             background-color: #000;
+        }
+
+        /* SETUP WARS GRID */
+        .setup-wars-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .vibe-card {
+            background: #fff;
+            padding: 30px 20px;
+            border: 1px solid #eee;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+        .vibe-card:hover {
+            border-color: #000;
         }
 
         /* JOURNAL STYLES */
@@ -211,7 +264,7 @@
 
         footer {
             text-align: center;
-            margin-top: 80px;
+            margin-top: 100px;
             padding-top: 40px;
             border-top: 1px solid #ddd;
             font-size: 0.6rem;
@@ -224,10 +277,17 @@
         @media (max-width: 600px) {
             .gallery-item {
                 grid-template-columns: 1fr;
+                gap: 30px;
+                margin-bottom: 60px;
             }
             .gallery-item:nth-child(even) {
                 direction: ltr;
             }
+            .setup-wars-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 { font-size: 2.5rem; letter-spacing: 5px; }
+            .category-title { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -239,24 +299,27 @@
         <h1>MONOLITH</h1>
         <span class="sub-header">Gaming Setups & Room Aesthetics</span>
     </header> 
-    <!-- MONOLITH GAMING CARD -->
-    <div style="background-color: #fff; border: 1px solid #e5e5e5; padding: 40px 30px; text-align: center; margin-bottom: 80px; max-width: 600px; margin-left: auto; margin-right: auto; border-radius: 4px;">
-        
-        <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 2px; text-transform: uppercase; color: #000; margin: 0 0 15px 0; font-weight: 600;">
+
+    <!-- PRIME GAMING CARD -->
+    <div style="background-color: #fff; border: 1px solid #e5e5e5; padding: 50px 30px; text-align: center; margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto; border-radius: 2px;">
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; letter-spacing: 2px; text-transform: uppercase; color: #000; margin: 0 0 15px 0; font-weight: 600;">
             Prime Gaming
         </p>
-        
-        <p style="font-size: 0.95rem; color: #666; line-height: 1.7; margin: 0 0 30px 0; max-width: 400px; margin-left: auto; margin-right: auto;">
+        <p style="font-size: 1rem; color: #666; line-height: 1.7; margin: 0 0 30px 0; max-width: 400px; margin-left: auto; margin-right: auto;">
             Free games, exclusive in-game loot, and free shipping on your gear. Try Amazon Prime free for 30 days. Cancel anytime.
         </p>
-
         <a href="https://amzn.to/41QJuHQ" target="_blank" rel="nofollow" style="display: inline-block; padding: 14px 35px; background-color: #000; color: #fff; text-decoration: none; font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s;">
             Start Free Trial
         </a>
-        
     </div>
 
-    <!-- PRODUCT 01: THE SPACE VOYAGER -->
+    <!-- SECTION 1: ATMOSPHERE -->
+    <div class="category-header">
+        <h2 class="category-title">The Atmosphere</h2>
+        <span class="category-sub">Lighting & Ambience</span>
+    </div>
+
+    <!-- PRODUCT 01 -->
     <div id="product-01" class="gallery-item">
         <div class="item-image-box">
             <div class="item-badge">Amazon Pick</div>
@@ -266,12 +329,12 @@
             <div class="item-number">01</div>
             <h3 class="item-title">The Space Voyager</h3>
             <p class="item-desc">A compact galaxy projector in the shape of an astronaut. Projects a stunning nebula and star field onto any ceiling. Doubles as a decorative figure for your shelf.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Best Seller</span></div>
-            <a href="https://amzn.to/4lYPTtT" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Best Seller</span></div>
+            <a href="https://amzn.to/4lYPTtT" target="_blank" class="btn-view">View on Amazon</a>
         </div>
     </div>
 
-    <!-- PRODUCT 02: THE GOLDEN HOUR -->
+    <!-- PRODUCT 02 -->
     <div id="product-02" class="gallery-item">
         <div class="item-image-box">
             <div class="item-badge">Viral</div>
@@ -281,72 +344,12 @@
             <div class="item-number">02</div>
             <h3 class="item-title">The Golden Hour</h3>
             <p class="item-desc">Transforms a lonely room into a warm sanctuary. Projects a stunning sunset effect on any wall. Instantly changes the mood of your space.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Top Rated</span></div>
-            <a href="https://amzn.to/4s9JEoB" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Top Rated</span></div>
+            <a href="https://amzn.to/4s9JEoB" target="_blank" class="btn-view">View on Amazon</a>
         </div>
     </div>
 
-    <!-- PRODUCT 03: THE SILENT MECHANIC -->
-    <div id="product-03" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Best Value</div>
-            <img src="https://i.ibb.co/WNy2bY5L/71-Tg-Ffc-G96-L-AC-SL1500.jpg" class="item-image" alt="Mechanical Keyboard">
-        </div>
-        <div class="item-info">
-            <div class="item-number">03</div>
-            <h3 class="item-title">The Silent Mechanic</h3>
-            <p class="item-desc">A clean, white 60% mechanical keyboard. Red linear switches provide smooth, quiet typing—perfect for late-night work or gaming. Compact design saves desk space.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Top Rated</span></div>
-            <a href="https://amzn.to/3O8WUMg" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 04: THE POWER GRID -->
-    <div id="product-04" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Essential</div>
-            <img src="https://i.ibb.co/Z1RCdgKc/81g-Nvt5wlz-L-AC-SL1500.jpg" class="item-image" alt="USB C Charging Station">
-        </div>
-        <div class="item-info">
-            <div class="item-number">04</div>
-            <h3 class="item-title">The Power Grid</h3>
-            <p class="item-desc">A 10-port GaN III charging station. 320W total power output with 65W PD for laptops. Eliminates cable clutter by charging all your devices from one single plug.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ High Power</span></div>
-            <a href="https://amzn.to/4lYevmu" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 05: THE SCREEN SHIELD -->
-    <div id="product-05" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Health Essential</div>
-            <img src="https://i.ibb.co/N2yPW12j/71r-Wignils-L-AC-SX679.jpg" class="item-image" alt="Blue Light Glasses">
-        </div>
-        <div class="item-info">
-            <div class="item-number">05</div>
-            <h3 class="item-title">The Screen Shield</h3>
-            <p class="item-desc">Stylish blue light blocking glasses. Reduces eye strain and prevents headaches from long screen hours. Includes two frame styles (Black and Clear) to match your look.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ 2-Pack Included</span></div>
-            <a href="https://amzn.to/4v3Qe2q" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 06: THE RGB SENTINEL -->
-    <div id="product-06" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Gaming Essential</div>
-            <img src="https://i.ibb.co/PZdrGr1h/718-U1m3-N-JL-AC-SL1500.jpg" class="item-image" alt="KDD RGB Headset Stand">
-        </div>
-        <div class="item-info">
-            <div class="item-number">06</div>
-            <h3 class="item-title">The RGB Sentinel</h3>
-            <p class="item-desc">Declutter your battlestation. This headset stand features 9 RGB light modes to match your setup's vibe. Includes a rotating base and a detachable hook for controllers. Function meets atmosphere.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ RGB Lighting</span></div>
-            <a href="https://amzn.to/4bVZdvr" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 07: THE ATMOSPHERE ENGINE -->
+    <!-- PRODUCT 07 -->
     <div id="product-07" class="gallery-item">
         <div class="item-image-box">
             <div class="item-badge">Best Seller</div>
@@ -356,117 +359,12 @@
             <div class="item-number">07</div>
             <h3 class="item-title">The Atmosphere Engine</h3>
             <p class="item-desc">You can buy expensive furniture, but bad lighting will still ruin the room. This strip fixes the "flatness" instantly. It projects multiple colors simultaneously to create a layered, immersive atmosphere.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ 10K+ Bought</span></div>
-            <a href="https://amzn.to/3OdQbRa" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <div class="item-trust"><span>Prime Shipping</span> <span>10K+ Bought</span></div>
+            <a href="https://amzn.to/3OdQbRa" target="_blank" class="btn-view">View on Amazon</a>
         </div>
     </div>
 
-    <!-- PRODUCT 08: THE COMPACT WARRIOR (NEW KEYBOARD) -->
-    <div id="product-08" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Budget King</div>
-            <img src="https://i.ibb.co/TBH3GgFr/71-P16v6p5-XL-AC-SL1500.jpg" class="item-image" alt="Snpurdiri 60% Keyboard">
-        </div>
-        <div class="item-info">
-            <div class="item-number">08</div>
-            <h3 class="item-title">The Compact Warrior</h3>
-            <p class="item-desc">A 60% gaming keyboard that doesn't break the bank. Ergonomic, RGB backlit, and extremely compact. It frees up massive desk space for your mouse movements. Perfect for gamers on a budget who still want that clean aesthetic.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Ergonomic</span></div>
-            <a href="https://amzn.to/4shFU4h" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 09: THE RGB CANVAS -->
-    <div id="product-09" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Desk Essential</div>
-            <img src="https://i.ibb.co/Cpx3YNQz/61q-ESc-JZI6-L-AC-SL1500.jpg" class="item-image" alt="XXL RGB Mouse Pad">
-        </div>
-        <div class="item-info">
-            <div class="item-number">09</div>
-            <h3 class="item-title">The RGB Canvas</h3>
-            <p class="item-desc">I used to think a mouse pad was just a piece of cloth. I was wrong. This XXL mat covers the entire desk and actually charges my phone while I game. The RGB edge lighting seals the vibe. It's the foundation my setup was missing.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Wireless Charging</span></div>
-            <a href="https://amzn.to/3Q3Sve5" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 10: THE CLUTTER KILLER -->
-    <div id="product-10" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Problem Solver</div>
-            <img src="https://i.ibb.co/KkbzKjv/71w-Rb-SN8-ZVL-AC-SL1500.jpg" class="item-image" alt="Under Desk Cable Management Tray">
-        </div>
-        <div class="item-info">
-            <div class="item-number">10</div>
-            <h3 class="item-title">The Clutter Killer</h3>
-            <p class="item-desc">I refused to look under my desk for years. It was a nightmare of wires and dust. This tray took 2 minutes to clamp on. No drills, no holes. Now, my floor is clear and my mind feels organized. Mental clarity starts with a clean floor.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ No Drill Install</span></div>
-            <a href="https://amzn.to/4dmN9nX" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 11: THE ZEN GARDEN -->
-    <div id="product-11" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Decor</div>
-            <img src="https://i.ibb.co/RpGjy3hY/71e04tbsy8-L-AC-SL1500.jpg" class="item-image" alt="Lego Bonsai Tree">
-        </div>
-        <div class="item-info">
-            <div class="item-number">11</div>
-            <h3 class="item-title">The Zen Garden</h3>
-            <p class="item-desc">My setup was missing something alive. I built this Lego Bonsai in an hour. It sits on my desk, doesn't need water, and adds this calm, organic vibe to the room. It’s mindfulness mixed with building. Plus, the pink frogs are a cute touch.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ 878 Pieces</span></div>
-            <a href="https://amzn.to/3Ohgki4" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 12: THE NUMBER CRUNCHER -->
-    <div id="product-12" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Productivity</div>
-            <img src="https://i.ibb.co/bg5b9byv/71-Hspf-NXMp-L-AC-SL1500.jpg" class="item-image" alt="RGB Mechanical Numpad">
-        </div>
-        <div class="item-info">
-            <div class="item-number">12</div>
-            <h3 class="item-title">The Number Cruncher</h3>
-            <p class="item-desc">I bought this thinking I'd only use it for Excel. I was wrong. It's actually amazing for gaming macros and hotkeys. The hot-swappable switches feel premium, and the RGB adds a cool glow under my monitor. It connects via Bluetooth or USB, so my desk stays clean.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Hot-Swappable</span></div>
-            <a href="https://amzn.to/4bR2snR" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 13: THE ERGONOMIC RISER -->
-    <div id="product-13" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Health Essential</div>
-            <img src="https://i.ibb.co/XZTtkRGd/61-P9-HPkgw-VL-AC-SL1500.jpg" class="item-image" alt="Lamicall Laptop Stand">
-        </div>
-        <div class="item-info">
-            <div class="item-number">13</div>
-            <h3 class="item-title">The Ergonomic Riser</h3>
-            <p class="item-desc">My neck used to hurt after 3 hours of work. I finally raised my screen. This aluminum stand is sturdy, folds flat for storage, and rotates 360 degrees. It instantly freed up desk space and saved my posture. An absolute must-have for laptop users.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Foldable</span></div>
-            <a href="https://amzn.to/47HzwMr" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 14: THE PRIVACY SHIELD -->
-    <div id="product-14" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Amazon's Choice</div>
-            <img src="https://i.ibb.co/j9Mqq9J5/61xn-CLDCl-GL-AC-SL1149.jpg" class="item-image" alt="Laptop Camera Cover">
-        </div>
-        <div class="item-info">
-            <div class="item-number">14</div>
-            <h3 class="item-title">The Privacy Shield</h3>
-            <p class="item-desc">I used to wonder if I was being watched. Not anymore. These thin sliders take 2 seconds to apply. Open when you need the cam, closed when you don't. For under $7, it’s the cheapest insurance policy I’ve ever bought. Total peace of mind.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ 5-Pack Included</span></div>
-            <a href="https://amzn.to/4v9tTAB" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 15: THE LUNAR GLOW -->
+    <!-- PRODUCT 15 -->
     <div id="product-15" class="gallery-item">
         <div class="item-image-box">
             <div class="item-badge">Amazon's Choice</div>
@@ -475,148 +373,13 @@
         <div class="item-info">
             <div class="item-number">15</div>
             <h3 class="item-title">The Lunar Glow</h3>
-            <p class="item-desc">I wanted a lamp, but not a boring one. I got this Moon Lamp. The 3D printed surface actually looks like the real moon craters. It sits on a wooden base and glows in 16 colors. It feels like I have a piece of space on my desk. The perfect gift for anyone.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ 30K+ Ratings</span></div>
-            <a href="https://amzn.to/4domlnn" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <p class="item-desc">I wanted a lamp, but not a boring one. The 3D printed surface actually looks like the real moon craters. It sits on a wooden base and glows in 16 colors. It feels like I have a piece of space on my desk.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>30K+ Ratings</span></div>
+            <a href="https://amzn.to/4domlnn" target="_blank" class="btn-view">View on Amazon</a>
         </div>
     </div>
 
-    <!-- PRODUCT 16: THE GAMER'S CLOAK -->
-    <div id="product-16" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Gamer Essential</div>
-            <img src="https://i.ibb.co/BhR6G1G/81-Ue-Jg5878-L-AC-SL1500.jpg" class="item-image" alt="Gaming Blanket">
-        </div>
-        <div class="item-info">
-            <div class="item-number">16</div>
-            <h3 class="item-title">The Gamer's Cloak</h3>
-            <p class="item-desc">My room gets cold, but I hate pausing my game to get a blanket. This thing glows in the dark with a controller design. It's huge (50x60"), soft, and perfect for late-night grinding. It's the armor I didn't know I needed.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Glow in Dark</span></div>
-            <a href="https://amzn.to/4v3ULC5" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 17: THE SPEED DECK -->
-    <div id="product-17" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Pro Upgrade</div>
-            <img src="https://i.ibb.co/XxNtmXCf/612-L5-MGHl-VL-AC-SL1500.jpg" class="item-image" alt="One Handed Gaming Keyboard">
-        </div>
-        <div class="item-info">
-            <div class="item-number">17</div>
-            <h3 class="item-title">The Speed Deck</h3>
-            <p class="item-desc">I used to fumble across my full keyboard trying to hit abilities. Now, I keep one hand on movement and the other on this. The magnetic switches are insanely fast, and the adjustable actuation means I can tune it to my exact preference. It's not cheating, it's efficiency.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Magnetic Switches</span></div>
-            <a href="https://amzn.to/4e2XUMl" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 18: THE RETRO BREEZE -->
-    <div id="product-18" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Retro</div>
-            <img src="https://i.ibb.co/j9fpj3zB/81dph-WQL7-L-AC-SL1500.jpg" class="item-image" alt="Retro Desk Fan">
-        </div>
-        <div class="item-info">
-            <div class="item-number">18</div>
-            <h3 class="item-title">The Retro Breeze</h3>
-            <p class="item-desc">My room gets hot, but ugly plastic fans ruin the aesthetic. I found this retro-style fan. It’s rechargeable (no messy cables!), quiet, and has an LED glow underneath. It keeps me cool during raids and looks like a vintage piece of tech on my desk.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Rechargeable</span></div>
-            <a href="https://amzn.to/4tpRn2T" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 19: THE STREAMER'S EDGE -->
-    <div id="product-19" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Amazon's Choice</div>
-            <img src="https://i.ibb.co/Qv7VY0fC/714-WPZTm-YL-AC-SL1500.jpg" class="item-image" alt="FIFINE Gaming Microphone">
-        </div>
-        <div class="item-info">
-            <div class="item-number">19</div>
-            <h3 class="item-title">The Streamer's Edge</h3>
-            <p class="item-desc">Stop using your headset mic. You sound like a robot. I picked up this dynamic mic kit. It comes with the boom arm included—no extra purchases needed. The tap-to-mute button is a lifesaver during streams, and the RGB fits the setup perfectly. Made me sound like a pro instantly.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Boom Arm Included</span></div>
-            <a href="https://amzn.to/4sbq0bK" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 20: THE DUAL DOCK -->
-    <div id="product-20" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Overall Pick</div>
-            <img src="https://i.ibb.co/6Rjqk380/61-E4b-Tm1-QZL-AC-SL1500.jpg" class="item-image" alt="PS5 Controller Charger">
-        </div>
-        <div class="item-info">
-            <div class="item-number">20</div>
-            <h3 class="item-title">The Dual Dock</h3>
-            <p class="item-desc">Nothing kills the vibe faster than a dead controller. I got this officially licensed dock for my PS5 controllers. It clicks them into place magnetically and charges them fast. No more AA batteries. No more wires across the floor. Just a clean, charged setup ready for the next session.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Officially Licensed</span></div>
-            <a href="https://amzn.to/4v989VH" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 21: THE GLOW LEDGE -->
-    <div id="product-21" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Amazon's Choice</div>
-            <img src="https://i.ibb.co/Csw4G5XF/81-UQqhw-Sd3-L-AC-SL1500.jpg" class="item-image" alt="Floating Shelves with LED">
-        </div>
-        <div class="item-info">
-            <div class="item-number">21</div>
-            <h3 class="item-title">The Glow Ledge</h3>
-            <p class="item-desc">My collectibles looked boring on a shelf. It looked flat. I swapped it for these floating shelves. The built-in RGB LED strip underneath creates a downlight effect that makes everything look premium. Invisible brackets mean you don't see the hardware, just the glow.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Set of 2</span></div>
-            <a href="https://amzn.to/4vhh33B" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 22: THE SILENT ANCHOR -->
-    <div id="product-22" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Minimalist</div>
-            <img src="https://i.ibb.co/CpPMm2S7/71e-XFKvf-Fv-L-AC-SL1500.jpg" class="item-image" alt="Black Minimalist Wall Clock">
-        </div>
-        <div class="item-info">
-            <div class="item-number">22</div>
-            <h3 class="item-title">The Silent Anchor</h3>
-            <p class="item-desc">I used to hate the sound of ticking clocks in my quiet room. This clock fixed that. It’s completely silent. Glass marble face looks expensive, but it’s incredibly affordable. It anchors the wall without screaming for attention. True minimalist vibes.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Non-Ticking</span></div>
-            <a href="https://amzn.to/4dt68gC" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 23: THE COMMAND CENTER -->
-    <div id="product-23" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">#1 Best Seller</div>
-            <img src="https://i.ibb.co/VWfyY7F7/819p8y4rGh-L-AC-SL1500.jpg" class="item-image" alt="Monitor Stand Riser">
-        </div>
-        <div class="item-info">
-            <div class="item-number">23</div>
-            <h3 class="item-title">The Command Center</h3>
-            <p class="item-desc">I was drowning in clutter. My keyboard took up half the desk. This riser changed everything. It lifted my monitors to eye level (goodbye neck pain) and gave me a secret drawer for all the ugly cables and pens. Instantly doubled my workspace.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ Hidden Drawer</span></div>
-            <a href="https://amzn.to/4bZC1MR" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 24: THE FOCUS BAR -->
-    <div id="product-24" class="gallery-item">
-        <div class="item-image-box">
-            <div class="item-badge">Eye-Care</div>
-            <img src="https://i.ibb.co/GvHvb68k/7180qk-Fb85-L-AC-SL1500.jpg" class="item-image" alt="Monitor Light Bar">
-        </div>
-        <div class="item-info">
-            <div class="item-number">24</div>
-            <h3 class="item-title">The Focus Bar</h3>
-            <p class="item-desc">I used to get headaches every night. I didn't realize it was the glare. This light bar sits on top of my monitor and shoots light backwards. It creates a soft halo that saves my eyes. No more headaches staring at the black screen. A total health upgrade.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ 9 Light Modes</span></div>
-            <a href="https://amzn.to/4sbCFeE" target="_blank" class="btn-view">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <!-- PRODUCT 25: THE NEON STATEMENT (MOVED HERE) -->
+    <!-- PRODUCT 25 -->
     <div id="product-25" class="gallery-item">
         <div class="item-image-box">
             <div class="item-badge">Amazon's Choice</div>
@@ -625,13 +388,13 @@
         <div class="item-info">
             <div class="item-number">25</div>
             <h3 class="item-title">The Neon Statement</h3>
-            <p class="item-desc">Instant atmosphere for the gaming rig. This USB-powered neon sign eliminates the need for extra wall plugs, integrating seamlessly into your setup. Dimmable brightness lets you control the mood—from a subtle background glow to a full cyberpunk aesthetic.</p>
-            <div class="item-trust"><span>✓ USB Powered</span> <span>✓ 50+ Bought</span></div>
-            <a href="https://amzn.to/4to3cq7" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <p class="item-desc">Instant atmosphere for the gaming rig. This USB-powered neon sign eliminates the need for extra wall plugs. Dimmable brightness lets you control the mood—from a subtle background glow to a full cyberpunk aesthetic.</p>
+            <div class="item-trust"><span>USB Powered</span> <span>50+ Bought</span></div>
+            <a href="https://amzn.to/4to3cq7" target="_blank" class="btn-view">View on Amazon</a>
         </div>
     </div>
 
-    <!-- PRODUCT 26: THE VILLAIN VIBE (JOKER) -->
+    <!-- PRODUCT 26 -->
     <div id="product-26" class="gallery-item">
         <div class="item-image-box">
             <div class="item-badge">Trending</div>
@@ -640,13 +403,13 @@
         <div class="item-info">
             <div class="item-number">26</div>
             <h3 class="item-title">The Villain Vibe</h3>
-            <p class="item-desc">Unleash a little chaos. This Joker neon sign brings an edgy, cinematic feel to any room. USB powered for seamless integration into your setup. Perfect for the man cave or gaming den.</p>
-            <div class="item-trust"><span>✓ USB Powered</span> <span>✓ Dimmable</span></div>
-            <a href="https://amzn.to/3PJbwm4" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <p class="item-desc">Unleash a little chaos. This Joker neon sign brings an edgy, cinematic feel to any room. USB powered for seamless integration. Perfect for the man cave or gaming den.</p>
+            <div class="item-trust"><span>USB Powered</span> <span>Dimmable</span></div>
+            <a href="https://amzn.to/3PJbwm4" target="_blank" class="btn-view">View on Amazon</a>
         </div>
     </div>
 
-    <!-- PRODUCT 27: THE OCEAN CUBE (WATER) -->
+    <!-- PRODUCT 27 -->
     <div id="product-27" class="gallery-item">
         <div class="item-image-box">
             <div class="item-badge">Viral</div>
@@ -655,13 +418,13 @@
         <div class="item-info">
             <div class="item-number">27</div>
             <h3 class="item-title">The Ocean Cube</h3>
-            <p class="item-desc">I honestly didn't expect it to work this well. It projects actual holographic water ripples that move across the walls. My room went from a plain box to a deep-sea sanctuary in seconds. If you need a vacation but can't leave the house, this is it.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ 16 Colors</span></div>
-            <a href="https://amzn.to/47FpLOU" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <p class="item-desc">I honestly didn't expect it to work this well. It projects actual holographic water ripples that move across the walls. My room went from a plain box to a deep-sea sanctuary in seconds.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>16 Colors</span></div>
+            <a href="https://amzn.to/47FpLOU" target="_blank" class="btn-view">View on Amazon</a>
         </div>
     </div>
 
-    <!-- PRODUCT 28: THE SPARTAN'S BLADE (HALO) -->
+    <!-- PRODUCT 28 -->
     <div id="product-28" class="gallery-item">
         <div class="item-image-box">
             <div class="item-badge">Gamer Essential</div>
@@ -671,44 +434,357 @@
             <div class="item-number">28</div>
             <h3 class="item-title">The Spartan's Blade</h3>
             <p class="item-desc">I used to have a boring lamp. It did nothing for my setup. I swapped it for this 14-inch Covenant Energy Sword. The blue glow hits the wall perfectly. It turns a regular desk into a Spartan station instantly.</p>
-            <div class="item-trust"><span>✓ Prime Shipping</span> <span>✓ 14" Tall</span></div>
-            <a href="https://amzn.to/3OjuH5t" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <div class="item-trust"><span>Prime Shipping</span> <span>14" Tall</span></div>
+            <a href="https://amzn.to/3OjuH5t" target="_blank" class="btn-view">View on Amazon</a>
         </div>
-    </div> 
-        <!-- SETUP WARS SECTION -->
-    <div style="margin-top: 80px; margin-bottom: 80px;">
+    </div>
+
+    <!-- SECTION 2: THE TOOLS -->
+    <div class="category-header">
+        <h2 class="category-title">The Tools</h2>
+        <span class="category-sub">Keyboards, Mice & Mats</span>
+    </div>
+
+    <!-- PRODUCT 03 -->
+    <div id="product-03" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Best Value</div>
+            <img src="https://i.ibb.co/WNy2bY5L/71-Tg-Ffc-G96-L-AC-SL1500.jpg" class="item-image" alt="Mechanical Keyboard">
+        </div>
+        <div class="item-info">
+            <div class="item-number">03</div>
+            <h3 class="item-title">The Silent Mechanic</h3>
+            <p class="item-desc">A clean, white 60% mechanical keyboard. Red linear switches provide smooth, quiet typing—perfect for late-night work or gaming. Compact design saves desk space.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Top Rated</span></div>
+            <a href="https://amzn.to/3O8WUMg" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 08 -->
+    <div id="product-08" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Budget King</div>
+            <img src="https://i.ibb.co/TBH3GgFr/71-P16v6p5-XL-AC-SL1500.jpg" class="item-image" alt="Snpurdiri 60% Keyboard">
+        </div>
+        <div class="item-info">
+            <div class="item-number">08</div>
+            <h3 class="item-title">The Compact Warrior</h3>
+            <p class="item-desc">A 60% gaming keyboard that doesn't break the bank. Ergonomic, RGB backlit, and extremely compact. It frees up massive desk space for your mouse movements.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Ergonomic</span></div>
+            <a href="https://amzn.to/4shFU4h" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 09 -->
+    <div id="product-09" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Desk Essential</div>
+            <img src="https://i.ibb.co/Cpx3YNQz/61q-ESc-JZI6-L-AC-SL1500.jpg" class="item-image" alt="XXL RGB Mouse Pad">
+        </div>
+        <div class="item-info">
+            <div class="item-number">09</div>
+            <h3 class="item-title">The RGB Canvas</h3>
+            <p class="item-desc">I used to think a mouse pad was just a piece of cloth. I was wrong. This XXL mat covers the entire desk and actually charges my phone while I game. The RGB edge lighting seals the vibe.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Wireless Charging</span></div>
+            <a href="https://amzn.to/3Q3Sve5" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 12 -->
+    <div id="product-12" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Productivity</div>
+            <img src="https://i.ibb.co/bg5b9byv/71-Hspf-NXMp-L-AC-SL1500.jpg" class="item-image" alt="RGB Mechanical Numpad">
+        </div>
+        <div class="item-info">
+            <div class="item-number">12</div>
+            <h3 class="item-title">The Number Cruncher</h3>
+            <p class="item-desc">I bought this thinking I'd only use it for Excel. I was wrong. It's actually amazing for gaming macros and hotkeys. The hot-swappable switches feel premium.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Hot-Swappable</span></div>
+            <a href="https://amzn.to/4bR2snR" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 17 -->
+    <div id="product-17" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Pro Upgrade</div>
+            <img src="https://i.ibb.co/XxNtmXCf/612-L5-MGHl-VL-AC-SL1500.jpg" class="item-image" alt="One Handed Gaming Keyboard">
+        </div>
+        <div class="item-info">
+            <div class="item-number">17</div>
+            <h3 class="item-title">The Speed Deck</h3>
+            <p class="item-desc">I used to fumble across my full keyboard trying to hit abilities. Now, I keep one hand on movement and the other on this. The magnetic switches are insanely fast.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Magnetic Switches</span></div>
+            <a href="https://amzn.to/4e2XUMl" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- SECTION 3: ORGANIZATION -->
+    <div class="category-header">
+        <h2 class="category-title">The Foundation</h2>
+        <span class="category-sub">Organization & Power</span>
+    </div>
+
+    <!-- PRODUCT 04 -->
+    <div id="product-04" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Essential</div>
+            <img src="https://i.ibb.co/Z1RCdgKc/81g-Nvt5wlz-L-AC-SL1500.jpg" class="item-image" alt="USB C Charging Station">
+        </div>
+        <div class="item-info">
+            <div class="item-number">04</div>
+            <h3 class="item-title">The Power Grid</h3>
+            <p class="item-desc">A 10-port GaN III charging station. 320W total power output with 65W PD for laptops. Eliminates cable clutter by charging all your devices from one single plug.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>High Power</span></div>
+            <a href="https://amzn.to/4lYevmu" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 06 -->
+    <div id="product-06" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Gaming Essential</div>
+            <img src="https://i.ibb.co/PZdrGr1h/718-U1m3-N-JL-AC-SL1500.jpg" class="item-image" alt="KDD RGB Headset Stand">
+        </div>
+        <div class="item-info">
+            <div class="item-number">06</div>
+            <h3 class="item-title">The RGB Sentinel</h3>
+            <p class="item-desc">Declutter your battlestation. This headset stand features 9 RGB light modes to match your setup's vibe. Includes a rotating base and a detachable hook for controllers.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>RGB Lighting</span></div>
+            <a href="https://amzn.to/4bVZdvr" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 10 -->
+    <div id="product-10" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Problem Solver</div>
+            <img src="https://i.ibb.co/KkbzKjv/71w-Rb-SN8-ZVL-AC-SL1500.jpg" class="item-image" alt="Under Desk Cable Management Tray">
+        </div>
+        <div class="item-info">
+            <div class="item-number">10</div>
+            <h3 class="item-title">The Clutter Killer</h3>
+            <p class="item-desc">I refused to look under my desk for years. It was a nightmare of wires. This tray took 2 minutes to clamp on. No drills, no holes. Mental clarity starts with a clean floor.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>No Drill Install</span></div>
+            <a href="https://amzn.to/4dmN9nX" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 13 -->
+    <div id="product-13" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Health Essential</div>
+            <img src="https://i.ibb.co/XZTtkRGd/61-P9-HPkgw-VL-AC-SL1500.jpg" class="item-image" alt="Lamicall Laptop Stand">
+        </div>
+        <div class="item-info">
+            <div class="item-number">13</div>
+            <h3 class="item-title">The Ergonomic Riser</h3>
+            <p class="item-desc">My neck used to hurt after 3 hours of work. This aluminum stand is sturdy, folds flat, and rotates 360 degrees. It instantly freed up desk space and saved my posture.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Foldable</span></div>
+            <a href="https://amzn.to/47HzwMr" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 23 -->
+    <div id="product-23" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">#1 Best Seller</div>
+            <img src="https://i.ibb.co/VWfyY7F7/819p8y4rGh-L-AC-SL1500.jpg" class="item-image" alt="Monitor Stand Riser">
+        </div>
+        <div class="item-info">
+            <div class="item-number">23</div>
+            <h3 class="item-title">The Command Center</h3>
+            <p class="item-desc">I was drowning in clutter. This riser changed everything. It lifted my monitors to eye level (goodbye neck pain) and gave me a secret drawer for all the ugly cables.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Hidden Drawer</span></div>
+            <a href="https://amzn.to/4bZC1MR" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 24 -->
+    <div id="product-24" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Eye-Care</div>
+            <img src="https://i.ibb.co/GvHvb68k/7180qk-Fb85-L-AC-SL1500.jpg" class="item-image" alt="Monitor Light Bar">
+        </div>
+        <div class="item-info">
+            <div class="item-number">24</div>
+            <h3 class="item-title">The Focus Bar</h3>
+            <p class="item-desc">I used to get headaches every night. This light bar sits on top of my monitor and shoots light backwards. It creates a soft halo that saves my eyes. A total health upgrade.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>9 Light Modes</span></div>
+            <a href="https://amzn.to/4sbCFeE" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- SECTION 4: LIFESTYLE -->
+    <div class="category-header">
+        <h2 class="category-title">The Lifestyle</h2>
+        <span class="category-sub">Health, Comfort & Decor</span>
+    </div>
+
+    <!-- PRODUCT 05 -->
+    <div id="product-05" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Health Essential</div>
+            <img src="https://i.ibb.co/N2yPW12j/71r-Wignils-L-AC-SX679.jpg" class="item-image" alt="Blue Light Glasses">
+        </div>
+        <div class="item-info">
+            <div class="item-number">05</div>
+            <h3 class="item-title">The Screen Shield</h3>
+            <p class="item-desc">Stylish blue light blocking glasses. Reduces eye strain and prevents headaches. Includes two frame styles (Black and Clear) to match your look.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>2-Pack Included</span></div>
+            <a href="https://amzn.to/4v3Qe2q" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 11 -->
+    <div id="product-11" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Decor</div>
+            <img src="https://i.ibb.co/RpGjy3hY/71e04tbsy8-L-AC-SL1500.jpg" class="item-image" alt="Lego Bonsai Tree">
+        </div>
+        <div class="item-info">
+            <div class="item-number">11</div>
+            <h3 class="item-title">The Zen Garden</h3>
+            <p class="item-desc">My setup was missing something alive. I built this Lego Bonsai in an hour. It sits on my desk, doesn't need water, and adds a calm, organic vibe to the room.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>878 Pieces</span></div>
+            <a href="https://amzn.to/3Ohgki4" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 14 -->
+    <div id="product-14" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Amazon's Choice</div>
+            <img src="https://i.ibb.co/j9Mqq9J5/61xn-CLDCl-GL-AC-SL1149.jpg" class="item-image" alt="Laptop Camera Cover">
+        </div>
+        <div class="item-info">
+            <div class="item-number">14</div>
+            <h3 class="item-title">The Privacy Shield</h3>
+            <p class="item-desc">I used to wonder if I was being watched. Not anymore. These thin sliders take 2 seconds to apply. For under $7, it’s the cheapest insurance policy I’ve ever bought.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>5-Pack Included</span></div>
+            <a href="https://amzn.to/4v9tTAB" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 16 -->
+    <div id="product-16" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Gamer Essential</div>
+            <img src="https://i.ibb.co/BhR6G1G/81-Ue-Jg5878-L-AC-SL1500.jpg" class="item-image" alt="Gaming Blanket">
+        </div>
+        <div class="item-info">
+            <div class="item-number">16</div>
+            <h3 class="item-title">The Gamer's Cloak</h3>
+            <p class="item-desc">My room gets cold, but I hate pausing my game. This thing glows in the dark with a controller design. It's huge (50x60"), soft, and perfect for late-night grinding.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Glow in Dark</span></div>
+            <a href="https://amzn.to/4v3ULC5" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 18 -->
+    <div id="product-18" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Retro</div>
+            <img src="https://i.ibb.co/j9fpj3zB/81dph-WQL7-L-AC-SL1500.jpg" class="item-image" alt="Retro Desk Fan">
+        </div>
+        <div class="item-info">
+            <div class="item-number">18</div>
+            <h3 class="item-title">The Retro Breeze</h3>
+            <p class="item-desc">My room gets hot, but ugly plastic fans ruin the aesthetic. This retro-style fan is rechargeable (no messy cables!), quiet, and has an LED glow underneath.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Rechargeable</span></div>
+            <a href="https://amzn.to/4tpRn2T" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 19 -->
+    <div id="product-19" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Amazon's Choice</div>
+            <img src="https://i.ibb.co/Qv7VY0fC/714-WPZTm-YL-AC-SL1500.jpg" class="item-image" alt="FIFINE Gaming Microphone">
+        </div>
+        <div class="item-info">
+            <div class="item-number">19</div>
+            <h3 class="item-title">The Streamer's Edge</h3>
+            <p class="item-desc">Stop using your headset mic. You sound like a robot. This dynamic mic kit comes with the boom arm included. Made me sound like a pro instantly.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Boom Arm Included</span></div>
+            <a href="https://amzn.to/4sbq0bK" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 20 -->
+    <div id="product-20" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Overall Pick</div>
+            <img src="https://i.ibb.co/6Rjqk380/61-E4b-Tm1-QZL-AC-SL1500.jpg" class="item-image" alt="PS5 Controller Charger">
+        </div>
+        <div class="item-info">
+            <div class="item-number">20</div>
+            <h3 class="item-title">The Dual Dock</h3>
+            <p class="item-desc">Nothing kills the vibe faster than a dead controller. This officially licensed dock clicks them into place magnetically. No more wires across the floor.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Officially Licensed</span></div>
+            <a href="https://amzn.to/4v989VH" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 21 -->
+    <div id="product-21" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Amazon's Choice</div>
+            <img src="https://i.ibb.co/Csw4G5XF/81-UQqhw-Sd3-L-AC-SL1500.jpg" class="item-image" alt="Floating Shelves with LED">
+        </div>
+        <div class="item-info">
+            <div class="item-number">21</div>
+            <h3 class="item-title">The Glow Ledge</h3>
+            <p class="item-desc">My collectibles looked boring on a shelf. I swapped it for these floating shelves. The built-in RGB LED strip underneath creates a downlight effect that makes everything look premium.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Set of 2</span></div>
+            <a href="https://amzn.to/4vhh33B" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT 22 -->
+    <div id="product-22" class="gallery-item">
+        <div class="item-image-box">
+            <div class="item-badge">Minimalist</div>
+            <img src="https://i.ibb.co/CpPMm2S7/71e-XFKvf-Fv-L-AC-SL1500.jpg" class="item-image" alt="Black Minimalist Wall Clock">
+        </div>
+        <div class="item-info">
+            <div class="item-number">22</div>
+            <h3 class="item-title">The Silent Anchor</h3>
+            <p class="item-desc">I used to hate the sound of ticking clocks. This clock is completely silent. Glass marble face looks expensive, but it’s incredibly affordable. True minimalist vibes.</p>
+            <div class="item-trust"><span>Prime Shipping</span> <span>Non-Ticking</span></div>
+            <a href="https://amzn.to/4dt68gC" target="_blank" class="btn-view">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- SETUP WARS SECTION -->
+    <div style="margin-top: 100px; margin-bottom: 80px;">
         <div class="journal-header" style="margin-bottom: 40px;">Setup Wars: Pick Your Vibe</div>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            
-            <!-- VIBE 1 -->
-            <div style="background: #fff; padding: 20px; border: 1px solid #eee; text-align: center;">
+        <div class="setup-wars-grid">
+            <a href="#product-01" class="vibe-card">
                 <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 10px;">The Galaxy Explorer</h3>
                 <p style="font-size: 0.8rem; color: #666; margin-bottom: 15px;">Deep space vibes for the dreamer.</p>
-                <a href="#product-01" style="font-size: 0.7rem; color: #000; text-decoration: underline;">Shop Projector →</a>
-            </div>
+                <span style="font-size: 0.7rem; color: #000; text-decoration: underline;">Shop Projector →</span>
+            </a>
 
-            <!-- VIBE 2 -->
-            <div style="background: #fff; padding: 20px; border: 1px solid #eee; text-align: center;">
+            <a href="#product-02" class="vibe-card">
                 <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 10px;">The Cozy Gamer</h3>
                 <p style="font-size: 0.8rem; color: #666; margin-bottom: 15px;">Warmth and comfort for long sessions.</p>
-                <a href="#product-02" style="font-size: 0.7rem; color: #000; text-decoration: underline;">Shop Sunset Lamp →</a>
-            </div>
+                <span style="font-size: 0.7rem; color: #000; text-decoration: underline;">Shop Sunset Lamp →</span>
+            </a>
 
-            <!-- VIBE 3 -->
-            <div style="background: #fff; padding: 20px; border: 1px solid #eee; text-align: center;">
+            <a href="#product-25" class="vibe-card">
                 <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 10px;">The Cyberpunk</h3>
                 <p style="font-size: 0.8rem; color: #666; margin-bottom: 15px;">Neon lights and dark corners.</p>
-                <a href="#product-25" style="font-size: 0.7rem; color: #000; text-decoration: underline;">Shop Neon Sign →</a>
-            </div>
+                <span style="font-size: 0.7rem; color: #000; text-decoration: underline;">Shop Neon Sign →</span>
+            </a>
 
-            <!-- VIBE 4 -->
-            <div style="background: #fff; padding: 20px; border: 1px solid #eee; text-align: center;">
+            <a href="#product-07" class="vibe-card">
                 <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 10px;">The RGB Pro</h3>
                 <p style="font-size: 0.8rem; color: #666; margin-bottom: 15px;">Maximum color, maximum immersion.</p>
-                <a href="#product-07" style="font-size: 0.7rem; color: #000; text-decoration: underline;">Shop LED Strips →</a>
-            </div>
-
+                <span style="font-size: 0.7rem; color: #000; text-decoration: underline;">Shop LED Strips →</span>
+            </a>
         </div>
     </div>
 
@@ -731,12 +807,8 @@
             <p class="journal-excerpt">Working in a dark room with a bright screen is a guaranteed way to burn out your eyes. Adding a bias light reduces the contrast strain instantly.</p>
         </div>
     </div>
-    <!-- JOURNAL SECTION END -->
 
-    <!-- FOOTER START -->
-    <footer>
-         <!-- FOOTER -->
-      <!-- FOOTER -->
+    <!-- FOOTER -->
     <footer>
         
         <!-- DISCLOSURE -->
@@ -746,27 +818,22 @@
             </p>
         </div>
 
-        <!-- BOUNTY LINKS (SMALL & CLEAN) -->
+        <!-- BOUNTY LINKS -->
         <div style="margin-bottom: 30px; text-align: center; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 20px 0;">
             <p style="font-size: 0.6rem; color: #999; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">
                 Monolith Recommends
             </p>
             <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-                
-                <!-- AUDIBLE LINK -->
                 <div>
                     <a href="https://amzn.to/4cvpKzC" target="_blank" rel="nofollow" style="color: #1a1a1a; text-decoration: none; font-size: 0.7rem; font-weight: 400;">
                         🎧 Try Audible Free
                     </a>
                 </div>
-
-                <!-- PRIME SIGN UP LINK -->
                 <div>
                     <a href="https://amzn.to/47OGorn" target="_blank" rel="nofollow" style="color: #1a1a1a; text-decoration: none; font-size: 0.7rem; font-weight: 400;">
                          Try Prime Free
                     </a>
                 </div>
-
             </div>
         </div>
 
@@ -779,9 +846,6 @@
 
         MONOLITH &copy; 2026
     </footer>
-        MONOLITH &copy; 2026
-    </footer>
-    <!-- FOOTER END -->
 
 </div>
 
