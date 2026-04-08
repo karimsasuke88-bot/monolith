@@ -6,17 +6,30 @@
     <title>MONOLITH | Gaming Setups & Room Aesthetics</title> 
     <meta name="p:domain_verify" content="51f54bf235802c8a4b347c5fa81c8d20"/>
     
-    <!-- PINTEREST SEO (Added for your traffic) -->
+    <meta name="description" content="Curated gaming setups, room aesthetics, and tech gear. Galaxy projectors, mechanical keyboards, LED strips, and desk accessories — handpicked for the modern setup.">
+    
     <meta property="og:title" content="MONOLITH | Gaming Setups & Room Aesthetics" />
     <meta property="og:description" content="Curated gaming setups, room aesthetics, and tech gear. Find the best neon lights, keyboards, and desk accessories." />
-    <meta property="og:image" content="https://i.ibb.co/ZRMZgqHy/71mld-UX2-ELL-AC-SL1500.jpg" /> 
-    <!-- Replace the image above with your best site image if needed -->
+    <meta property="og:image" content="https://i.ibb.co/ZRMZgqHy/71mld-UX2-ELL-AC-SL1500.jpg" />
     
-    <!-- FAVICON -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬛</text></svg>">
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '2253249');
+    </script>
+
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8f8f6;
@@ -32,6 +45,41 @@
             padding: 40px 20px;
         }
 
+        /* ═══════════════════════════════
+           STICKY NAV
+        ═══════════════════════════════ */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(248, 248, 246, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e5e5e5;
+            padding: 0;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .sticky-nav.scrolled {
+            box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+        }
+        .sticky-nav a {
+            font-size: 0.6rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #999;
+            text-decoration: none;
+            padding: 14px 18px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+        .sticky-nav a:hover {
+            color: #000;
+        }
+
+        /* ═══════════════════════════════
+           HEADER
+        ═══════════════════════════════ */
         header {
             text-align: center;
             margin-bottom: 60px;
@@ -59,7 +107,425 @@
             padding-top: 15px;
         }
 
-        /* SECTION HEADERS */
+        /* ═══════════════════════════════
+           PRIME CARD
+        ═══════════════════════════════ */
+        .prime-card {
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            padding: 50px 30px;
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 2px;
+        }
+        .prime-card p:first-child {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #000;
+            margin: 0 0 15px 0;
+            font-weight: 600;
+        }
+        .prime-card p:nth-child(2) {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.7;
+            margin: 0 0 30px 0;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .prime-card a {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .prime-card a:hover {
+            background-color: #333;
+        }
+
+        /* ═══════════════════════════════
+           EMAIL CAPTURE — INLINE
+        ═══════════════════════════════ */
+        .email-inline {
+            background: #000;
+            color: #fff;
+            padding: 70px 30px;
+            text-align: center;
+            margin-bottom: 80px;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .email-inline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(255,153,0,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(255,153,0,0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .email-inline-label {
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            margin-bottom: 20px;
+            display: block;
+        }
+        .email-inline-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #fff;
+            margin: 0 0 12px 0;
+            line-height: 1.1;
+        }
+        .email-inline-sub {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            margin: 0 0 35px 0;
+            font-weight: 300;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .email-inline-form {
+            display: flex;
+            gap: 0;
+            max-width: 440px;
+            margin: 0 auto;
+        }
+        .email-inline-input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-right: none;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            outline: none;
+            border-radius: 2px 0 0 2px;
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .email-inline-input::placeholder {
+            color: rgba(255,255,255,0.25);
+        }
+        .email-inline-input:focus {
+            border-color: rgba(255,153,0,0.5);
+            background: rgba(255,255,255,0.08);
+        }
+        .email-inline-btn {
+            padding: 14px 28px;
+            background: #FF9900;
+            color: #fff;
+            border: 1px solid #FF9900;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 0 2px 2px 0;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+        .email-inline-btn:hover {
+            background: #e68a00;
+            border-color: #e68a00;
+        }
+        .email-inline-note {
+            font-size: 0.6rem;
+            color: rgba(255,255,255,0.2);
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+        .email-inline-success {
+            display: none;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            color: #FF9900;
+            margin: 0;
+        }
+
+        @media (max-width: 500px) {
+            .email-inline-form {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .email-inline-input {
+                border-right: 1px solid rgba(255,255,255,0.15);
+                border-radius: 2px;
+            }
+            .email-inline-btn {
+                border-radius: 2px;
+                padding: 14px;
+            }
+            .email-inline-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* ═══════════════════════════════
+           EMAIL CAPTURE — FLOATING BAR
+        ═══════════════════════════════ */
+        .email-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            background: #fff;
+            border-top: 1px solid #e0e0e0;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: 0 -2px 20px rgba(0,0,0,0.06);
+        }
+        .email-bar.visible {
+            transform: translateY(0);
+        }
+        .email-bar-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            color: #000;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+        .email-bar-input {
+            padding: 10px 16px;
+            border: 1px solid #ddd;
+            background: #f8f8f6;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: #1a1a1a;
+            outline: none;
+            width: 220px;
+            border-radius: 2px;
+            transition: border-color 0.3s;
+        }
+        .email-bar-input:focus {
+            border-color: #000;
+        }
+        .email-bar-btn {
+            padding: 10px 22px;
+            background: #000;
+            color: #fff;
+            border: 1px solid #000;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+        .email-bar-btn:hover {
+            background: #333;
+        }
+        .email-bar-close {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #ccc;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 4px;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+        .email-bar-close:hover {
+            color: #000;
+        }
+
+        @media (max-width: 640px) {
+            .email-bar-text {
+                display: none;
+            }
+            .email-bar-input {
+                width: 160px;
+            }
+        }
+
+        /* ═══════════════════════════════
+           EMAIL CAPTURE — EXIT POPUP
+        ═══════════════════════════════ */
+        .email-popup-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 300;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s, visibility 0.4s;
+            padding: 20px;
+        }
+        .email-popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .email-popup {
+            background: #fff;
+            max-width: 460px;
+            width: 100%;
+            padding: 60px 40px 50px;
+            text-align: center;
+            position: relative;
+            border-radius: 2px;
+            transform: translateY(20px) scale(0.97);
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .email-popup-overlay.active .email-popup {
+            transform: translateY(0) scale(1);
+        }
+        .email-popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #ccc;
+            cursor: pointer;
+            font-size: 1.4rem;
+            padding: 4px;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+        .email-popup-close:hover {
+            color: #000;
+        }
+        .email-popup-icon {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 1.2rem;
+        }
+        .email-popup-label {
+            font-size: 0.55rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #bbb;
+            margin-bottom: 18px;
+            display: block;
+        }
+        .email-popup-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #000;
+            margin: 0 0 10px 0;
+            line-height: 1.1;
+        }
+        .email-popup-desc {
+            font-size: 0.9rem;
+            color: #888;
+            margin: 0 0 30px 0;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+        .email-popup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .email-popup-input {
+            padding: 14px 20px;
+            border: 1px solid #ddd;
+            background: #f8f8f6;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #1a1a1a;
+            outline: none;
+            border-radius: 2px;
+            transition: border-color 0.3s;
+            text-align: center;
+        }
+        .email-popup-input::placeholder {
+            color: #bbb;
+            letter-spacing: 0.5px;
+        }
+        .email-popup-input:focus {
+            border-color: #000;
+        }
+        .email-popup-btn {
+            padding: 14px 28px;
+            background: #000;
+            color: #fff;
+            border: 1px solid #000;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: background 0.3s;
+        }
+        .email-popup-btn:hover {
+            background: #333;
+        }
+        .email-popup-decline {
+            font-size: 0.65rem;
+            color: #ccc;
+            margin-top: 12px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        .email-popup-decline:hover {
+            color: #999;
+        }
+
+        /* ═══════════════════════════════
+           SECTION HEADERS
+        ═══════════════════════════════ */
         .category-header {
             margin-top: 100px;
             margin-bottom: 50px;
@@ -85,6 +551,9 @@
             margin-top: 10px;
         }
 
+        /* ═══════════════════════════════
+           GALLERY ITEMS
+        ═══════════════════════════════ */
         .gallery-item {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -123,19 +592,52 @@
             transform: scale(1.05);
         }
 
+        /* Pinterest Save Button */
+        .item-image-box .pin-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: #E60023;
+            color: #fff;
+            padding: 8px 16px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: opacity 0.3s;
+            cursor: pointer;
+            border-radius: 2px;
+            text-decoration: none;
+            z-index: 10;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+        .item-image-box:hover .pin-btn {
+            opacity: 1;
+        }
+        .pin-btn:hover {
+            background: #ad081b;
+        }
+
+        /* Badge colors */
         .item-badge {
             position: absolute;
             top: 20px;
             left: 20px;
-            background-color: #1a1a1a;
-            color: #fff;
             padding: 6px 12px;
             font-size: 0.65rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
             z-index: 10;
+            border-radius: 2px;
         }
+        .item-badge[data-type="viral"] { background-color: #E60023; color: #fff; }
+        .item-badge[data-type="seller"] { background-color: #FF9900; color: #fff; }
+        .item-badge[data-type="choice"] { background-color: #1a1a1a; color: #fff; }
+        .item-badge[data-type="value"] { background-color: #28a745; color: #fff; }
+        .item-badge[data-type="default"] { background-color: #1a1a1a; color: #fff; }
 
         .item-info {
             padding: 10px 0;
@@ -183,7 +685,6 @@
             font-weight: bold;
         }
 
-        /* MONEY MAKER BUTTON FIX */
         .btn-view {
             display: inline-block;
             padding: 14px 30px;
@@ -192,42 +693,24 @@
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            
-            /* NEW COLORS - AMAZON ORANGE */
-            color: #fff;                  /* White text */
-            background-color: #FF9900;    /* Amazon Orange */
-            border: 2px solid #FF9900;    /* Solid border */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Depth */
-            
+            color: #fff;
+            background-color: #FF9900;
+            border: 2px solid #FF9900;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: all 0.3s;
+            border-radius: 2px;
         }
 
         .btn-view:hover {
-            background-color: #e68a00;    /* Darker orange on hover */
+            background-color: #e68a00;
             border-color: #e68a00;
             color: #fff;
             transform: translateY(-2px);
         }
 
-        /* SETUP WARS GRID */
-        .setup-wars-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .vibe-card {
-            background: #fff;
-            padding: 30px 20px;
-            border: 1px solid #eee;
-            text-align: center;
-            transition: border-color 0.3s;
-        }
-        .vibe-card:hover {
-            border-color: #000;
-        }
-
-        /* JOURNAL STYLES */
+        /* ═══════════════════════════════
+           JOURNAL
+        ═══════════════════════════════ */
         .journal-section {
             margin-top: 100px;
             border-top: 1px solid #ddd;
@@ -275,6 +758,9 @@
             margin: 0;
         }
 
+        /* ═══════════════════════════════
+           FOOTER
+        ═══════════════════════════════ */
         footer {
             text-align: center;
             margin-top: 100px;
@@ -284,9 +770,44 @@
             color: #ccc;
             letter-spacing: 2px;
             text-transform: uppercase;
-            padding-bottom: 40px;
+            padding-bottom: 80px;
         }
 
+        /* ═══════════════════════════════
+           BACK TO TOP
+        ═══════════════════════════════ */
+        #btt {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 44px;
+            height: 44px;
+            background: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+            z-index: 150;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #btt.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #btt:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        /* ═══════════════════════════════
+           RESPONSIVE
+        ═══════════════════════════════ */
         @media (max-width: 600px) {
             .gallery-item {
                 grid-template-columns: 1fr;
@@ -296,15 +817,39 @@
             .gallery-item:nth-child(even) {
                 direction: ltr;
             }
-            .setup-wars-grid {
-                grid-template-columns: 1fr;
-            }
             h1 { font-size: 2.5rem; letter-spacing: 5px; }
             .category-title { font-size: 1.8rem; }
+            .email-popup {
+                padding: 50px 25px 40px;
+            }
+            .email-popup-title {
+                font-size: 1.8rem;
+            }
+            .email-bar {
+                padding-bottom: 24px;
+            }
+            #btt {
+                bottom: 70px;
+            }
         }
     </style>
 </head>
 <body>
+
+<!-- Hidden MailerLite form — renders on page load -->
+<div style="position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;height:0;overflow:hidden;">
+    <div class="ml-embedded" data-form="4jLkOf"></div>
+</div>
+
+<!-- ═══════════════════════════════
+     STICKY NAV
+═════════════════════════════ -->
+<nav class="sticky-nav" id="stickyNav">
+    <a href="#atmosphere">Atmosphere</a>
+    <a href="#tools">Tools</a>
+    <a href="#foundation">Foundation</a>
+    <a href="#lifestyle">Lifestyle</a>
+</nav>
 
 <div class="container">
 
@@ -313,21 +858,32 @@
         <span class="sub-header">Gaming Setups & Room Aesthetics</span>
     </header> 
 
-    <!-- PRIME GAMING CARD -->
-    <div style="background-color: #fff; border: 1px solid #e5e5e5; padding: 50px 30px; text-align: center; margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto; border-radius: 2px;">
-        <p style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; letter-spacing: 2px; text-transform: uppercase; color: #000; margin: 0 0 15px 0; font-weight: 600;">
-            Prime Gaming
-        </p>
-        <p style="font-size: 1rem; color: #666; line-height: 1.7; margin: 0 0 30px 0; max-width: 400px; margin-left: auto; margin-right: auto;">
-            Free games, exclusive in-game loot, and free shipping on your gear. Try Amazon Prime free for 30 days. Cancel anytime.
-        </p>
-        <a href="https://amzn.to/41QJuHQ" target="_blank" rel="nofollow" style="display: inline-block; padding: 14px 35px; background-color: #000; color: #fff; text-decoration: none; font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s;">
-            Start Free Trial
-        </a>
+    <!-- PRIME CARD -->
+    <div class="prime-card">
+        <p>Prime Gaming</p>
+        <p>Free games, exclusive in-game loot, and free shipping on your gear. Try Amazon Prime free for 30 days. Cancel anytime.</p>
+        <a href="https://amzn.to/41QJuHQ" target="_blank" rel="nofollow noopener noreferrer">Start Free Trial</a>
     </div>
 
-    <!-- SECTION 1: ATMOSPHERE -->
-    <div class="category-header">
+    <!-- ═══════════════════════════════
+         EMAIL CAPTURE — INLINE
+    ══════════════════════════════ -->
+    <div class="email-inline" id="emailInline">
+        <span class="email-inline-label">The Inner Circle</span>
+        <h2 class="email-inline-title">Join the List</h2>
+        <p class="email-inline-sub">New setups, hidden gear finds, and aesthetic upgrades. Delivered once a week.</p>
+        <form class="email-inline-form" id="emailInlineForm">
+            <input type="email" class="email-inline-input" placeholder="your@email.com" required>
+            <button type="submit" class="email-inline-btn">Subscribe</button>
+        </form>
+        <p class="email-inline-note">Join 2,400+ readers · Unsubscribe anytime</p>
+        <p class="email-inline-success" id="emailInlineSuccess">You're in. Welcome.</p>
+    </div>
+
+    <!-- ═══════════════════════════════
+         SECTION 1: ATMOSPHERE
+    ══════════════════════════════ -->
+    <div class="category-header" id="atmosphere">
         <h2 class="category-title">The Atmosphere</h2>
         <span class="category-sub">Lighting & Ambience</span>
     </div>
@@ -335,125 +891,135 @@
     <!-- PRODUCT 01 -->
     <div id="product-01" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Amazon Pick</div>
-            <img src="https://i.ibb.co/ZRMZgqHy/71mld-UX2-ELL-AC-SL1500.jpg" class="item-image" alt="Astronaut Galaxy Projector">
+            <div class="item-badge" data-type="choice">Amazon Pick</div>
+            <img src="https://i.ibb.co/ZRMZgqHy/71mld-UX2-ELL-AC-SL1500.jpg" class="item-image" alt="Astronaut Galaxy Projector" loading="eager">
+            <button class="pin-btn" data-pin-title="The Space Voyager — Astronaut Galaxy Projector" data-pin-img="https://i.ibb.co/ZRMZgqHy/71mld-UX2-ELL-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">01</div>
             <h3 class="item-title">The Space Voyager</h3>
             <p class="item-desc">A compact galaxy projector in the shape of an astronaut. Projects a stunning nebula and star field onto any ceiling. Doubles as a decorative figure for your shelf.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Best Seller</span></div>
-            <a href="https://amzn.to/4lYPTtT" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4lYPTtT" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 02 -->
     <div id="product-02" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Viral</div>
-            <img src="https://i.ibb.co/LXLHvbnS/71-Q-ZEUu-AZL-AC-SL1500.jpg" class="item-image" alt="Sunset Lamp">
+            <div class="item-badge" data-type="viral">Viral</div>
+            <img src="https://i.ibb.co/LXLHvbnS/71-Q-ZEUu-AZL-AC-SL1500.jpg" class="item-image" alt="Sunset Lamp" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Golden Hour — Sunset Lamp" data-pin-img="https://i.ibb.co/LXLHvbnS/71-Q-ZEUu-AZL-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">02</div>
             <h3 class="item-title">The Golden Hour</h3>
             <p class="item-desc">Transforms a lonely room into a warm sanctuary. Projects a stunning sunset effect on any wall. Instantly changes the mood of your space.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Top Rated</span></div>
-            <a href="https://amzn.to/4s9JEoB" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4s9JEoB" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 07 -->
     <div id="product-07" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Best Seller</div>
-            <img src="https://i.ibb.co/KpvmMvNh/71tjd-Zg28v-L-AC-SL1500.jpg" class="item-image" alt="Govee RGBIC LED Strip Lights">
+            <div class="item-badge" data-type="seller">Best Seller</div>
+            <img src="https://i.ibb.co/KpvmMvNh/71tjd-Zg28v-L-AC-SL1500.jpg" class="item-image" alt="Govee RGBIC LED Strip Lights" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Atmosphere Engine — Govee RGBIC LED Strip" data-pin-img="https://i.ibb.co/KpvmMvNh/71tjd-Zg28v-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">07</div>
             <h3 class="item-title">The Atmosphere Engine</h3>
             <p class="item-desc">You can buy expensive furniture, but bad lighting will still ruin the room. This strip fixes the "flatness" instantly. It projects multiple colors simultaneously to create a layered, immersive atmosphere.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>10K+ Bought</span></div>
-            <a href="https://amzn.to/3OdQbRa" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/3OdQbRa" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 15 -->
     <div id="product-15" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Amazon's Choice</div>
-            <img src="https://i.ibb.co/yBp7HxfJ/81-Xi-LITH3-IL-AC-SL1500.jpg" class="item-image" alt="Moon Lamp">
+            <div class="item-badge" data-type="choice">Amazon's Choice</div>
+            <img src="https://i.ibb.co/yBp7HxfJ/81-Xi-LITH3-IL-AC-SL1500.jpg" class="item-image" alt="Moon Lamp" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Lunar Glow — 3D Moon Lamp" data-pin-img="https://i.ibb.co/yBp7HxfJ/81-Xi-LITH3-IL-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">15</div>
             <h3 class="item-title">The Lunar Glow</h3>
             <p class="item-desc">I wanted a lamp, but not a boring one. The 3D printed surface actually looks like the real moon craters. It sits on a wooden base and glows in 16 colors. It feels like I have a piece of space on my desk.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>30K+ Ratings</span></div>
-            <a href="https://amzn.to/4domlnn" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4domlnn" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 25 -->
     <div id="product-25" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Amazon's Choice</div>
-            <img src="https://i.ibb.co/N6KVdvBq/61p-VQS-3-Lc-L-AC-SL1500.jpg" class="item-image" alt="Gaming Neon Sign">
+            <div class="item-badge" data-type="choice">Amazon's Choice</div>
+            <img src="https://i.ibb.co/N6KVdvBq/61p-VQS-3-Lc-L-AC-SL1500.jpg" class="item-image" alt="Gaming Neon Sign" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Neon Statement — USB Gaming Neon Sign" data-pin-img="https://i.ibb.co/N6KVdvBq/61p-VQS-3-Lc-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">25</div>
             <h3 class="item-title">The Neon Statement</h3>
             <p class="item-desc">Instant atmosphere for the gaming rig. This USB-powered neon sign eliminates the need for extra wall plugs. Dimmable brightness lets you control the mood—from a subtle background glow to a full cyberpunk aesthetic.</p>
             <div class="item-trust"><span>USB Powered</span> <span>50+ Bought</span></div>
-            <a href="https://amzn.to/4to3cq7" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4to3cq7" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 26 -->
     <div id="product-26" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Trending</div>
-            <img src="https://i.ibb.co/B5H3Qk3B/81-Ox-Hz-NOSSL-AC-SL1500.jpg" class="item-image" alt="Joker Neon Sign">
+            <div class="item-badge" data-type="viral">Trending</div>
+            <img src="https://i.ibb.co/B5H3Qk3B/81-Ox-Hz-NOSSL-AC-SL1500.jpg" class="item-image" alt="Joker Neon Sign" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Villain Vibe — Joker Neon Sign" data-pin-img="https://i.ibb.co/B5H3Qk3B/81-Ox-Hz-NOSSL-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">26</div>
             <h3 class="item-title">The Villain Vibe</h3>
             <p class="item-desc">Unleash a little chaos. This Joker neon sign brings an edgy, cinematic feel to any room. USB powered for seamless integration. Perfect for the man cave or gaming den.</p>
             <div class="item-trust"><span>USB Powered</span> <span>Dimmable</span></div>
-            <a href="https://amzn.to/3PJbwm4" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/3PJbwm4" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 27 -->
     <div id="product-27" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Viral</div>
-            <img src="https://i.ibb.co/twyrZSNw/71-GNXE0-PFh-L-AC-SL1500.jpg" class="item-image" alt="Ocean Wave Projector">
+            <div class="item-badge" data-type="viral">Viral</div>
+            <img src="https://i.ibb.co/twyrZSNw/71-GNXE0-PFh-L-AC-SL1500.jpg" class="item-image" alt="Ocean Wave Projector" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Ocean Cube — Holographic Wave Projector" data-pin-img="https://i.ibb.co/twyrZSNw/71-GNXE0-PFh-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">27</div>
             <h3 class="item-title">The Ocean Cube</h3>
             <p class="item-desc">I honestly didn't expect it to work this well. It projects actual holographic water ripples that move across the walls. My room went from a plain box to a deep-sea sanctuary in seconds.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>16 Colors</span></div>
-            <a href="https://amzn.to/47FpLOU" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/47FpLOU" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 28 -->
     <div id="product-28" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Gamer Essential</div>
-            <img src="https://i.ibb.co/rGNcsWB4/618-YA-ri8b-L-AC-SL1500.jpg" class="item-image" alt="Halo Energy Sword Lamp">
+            <div class="item-badge" data-type="default">Gamer Essential</div>
+            <img src="https://i.ibb.co/rGNcsWB4/618-YA-ri8b-L-AC-SL1500.jpg" class="item-image" alt="Halo Energy Sword Lamp" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Spartan's Blade — Halo Energy Sword Lamp" data-pin-img="https://i.ibb.co/rGNcsWB4/618-YA-ri8b-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">28</div>
             <h3 class="item-title">The Spartan's Blade</h3>
             <p class="item-desc">I used to have a boring lamp. It did nothing for my setup. I swapped it for this 14-inch Covenant Energy Sword. The blue glow hits the wall perfectly. It turns a regular desk into a Spartan station instantly.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>14" Tall</span></div>
-            <a href="https://amzn.to/3OjuH5t" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/3OjuH5t" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
-    <!-- SECTION 2: THE TOOLS -->
-    <div class="category-header">
+    <!-- ═══════════════════════════════
+         SECTION 2: THE TOOLS
+    ══════════════════════════════ -->
+    <div class="category-header" id="tools">
         <h2 class="category-title">The Tools</h2>
         <span class="category-sub">Keyboards, Mice & Mats</span>
     </div>
@@ -461,80 +1027,87 @@
     <!-- PRODUCT 03 -->
     <div id="product-03" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Best Value</div>
-            <img src="https://i.ibb.co/WNy2bY5L/71-Tg-Ffc-G96-L-AC-SL1500.jpg" class="item-image" alt="Mechanical Keyboard">
+            <div class="item-badge" data-type="value">Best Value</div>
+            <img src="https://i.ibb.co/WNy2bY5L/71-Tg-Ffc-G96-L-AC-SL1500.jpg" class="item-image" alt="Mechanical Keyboard" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Silent Mechanic — 60% White Mechanical Keyboard" data-pin-img="https://i.ibb.co/WNy2bY5L/71-Tg-Ffc-G96-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">03</div>
             <h3 class="item-title">The Silent Mechanic</h3>
             <p class="item-desc">A clean, white 60% mechanical keyboard. Red linear switches provide smooth, quiet typing—perfect for late-night work or gaming. Compact design saves desk space.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Top Rated</span></div>
-            <a href="https://amzn.to/3O8WUMg" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/3O8WUMg" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 08 -->
     <div id="product-08" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Budget King</div>
-            <img src="https://i.ibb.co/TBH3GgFr/71-P16v6p5-XL-AC-SL1500.jpg" class="item-image" alt="Snpurdiri 60% Keyboard">
+            <div class="item-badge" data-type="value">Budget King</div>
+            <img src="https://i.ibb.co/TBH3GgFr/71-P16v6p5-XL-AC-SL1500.jpg" class="item-image" alt="Snpurdiri 60% Keyboard" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Compact Warrior — Budget 60% Gaming Keyboard" data-pin-img="https://i.ibb.co/TBH3GgFr/71-P16v6p5-XL-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">08</div>
             <h3 class="item-title">The Compact Warrior</h3>
             <p class="item-desc">A 60% gaming keyboard that doesn't break the bank. Ergonomic, RGB backlit, and extremely compact. It frees up massive desk space for your mouse movements.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Ergonomic</span></div>
-            <a href="https://amzn.to/4shFU4h" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4shFU4h" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 09 -->
     <div id="product-09" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Desk Essential</div>
-            <img src="https://i.ibb.co/Cpx3YNQz/61q-ESc-JZI6-L-AC-SL1500.jpg" class="item-image" alt="XXL RGB Mouse Pad">
+            <div class="item-badge" data-type="default">Desk Essential</div>
+            <img src="https://i.ibb.co/Cpx3YNQz/61q-ESc-JZI6-L-AC-SL1500.jpg" class="item-image" alt="XXL RGB Mouse Pad" loading="lazy">
+            <button class="pin-btn" data-pin-title="The RGB Canvas — XXL Wireless Charging Mouse Pad" data-pin-img="https://i.ibb.co/Cpx3YNQz/61q-ESc-JZI6-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">09</div>
             <h3 class="item-title">The RGB Canvas</h3>
             <p class="item-desc">I used to think a mouse pad was just a piece of cloth. I was wrong. This XXL mat covers the entire desk and actually charges my phone while I game. The RGB edge lighting seals the vibe.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Wireless Charging</span></div>
-            <a href="https://amzn.to/3Q3Sve5" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/3Q3Sve5" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 12 -->
     <div id="product-12" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Productivity</div>
-            <img src="https://i.ibb.co/bg5b9byv/71-Hspf-NXMp-L-AC-SL1500.jpg" class="item-image" alt="RGB Mechanical Numpad">
+            <div class="item-badge" data-type="default">Productivity</div>
+            <img src="https://i.ibb.co/bg5b9byv/71-Hspf-NXMp-L-AC-SL1500.jpg" class="item-image" alt="RGB Mechanical Numpad" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Number Cruncher — RGB Mechanical Numpad" data-pin-img="https://i.ibb.co/bg5b9byv/71-Hspf-NXMp-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">12</div>
             <h3 class="item-title">The Number Cruncher</h3>
             <p class="item-desc">I bought this thinking I'd only use it for Excel. I was wrong. It's actually amazing for gaming macros and hotkeys. The hot-swappable switches feel premium.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Hot-Swappable</span></div>
-            <a href="https://amzn.to/4bR2snR" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4bR2snR" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 17 -->
     <div id="product-17" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Pro Upgrade</div>
-            <img src="https://i.ibb.co/XxNtmXCf/612-L5-MGHl-VL-AC-SL1500.jpg" class="item-image" alt="One Handed Gaming Keyboard">
+            <div class="item-badge" data-type="default">Pro Upgrade</div>
+            <img src="https://i.ibb.co/XxNtmXCf/612-L5-MGHl-VL-AC-SL1500.jpg" class="item-image" alt="One Handed Gaming Keyboard" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Speed Deck — One-Handed Gaming Keyboard" data-pin-img="https://i.ibb.co/XxNtmXCf/612-L5-MGHl-VL-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">17</div>
             <h3 class="item-title">The Speed Deck</h3>
             <p class="item-desc">I used to fumble across my full keyboard trying to hit abilities. Now, I keep one hand on movement and the other on this. The magnetic switches are insanely fast.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Magnetic Switches</span></div>
-            <a href="https://amzn.to/4e2XUMl" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4e2XUMl" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
-    <!-- SECTION 3: ORGANIZATION -->
-    <div class="category-header">
+    <!-- ═══════════════════════════════
+         SECTION 3: ORGANIZATION
+    ══════════════════════════════ -->
+    <div class="category-header" id="foundation">
         <h2 class="category-title">The Foundation</h2>
         <span class="category-sub">Organization & Power</span>
     </div>
@@ -542,95 +1115,103 @@
     <!-- PRODUCT 04 -->
     <div id="product-04" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Essential</div>
-            <img src="https://i.ibb.co/Z1RCdgKc/81g-Nvt5wlz-L-AC-SL1500.jpg" class="item-image" alt="USB C Charging Station">
+            <div class="item-badge" data-type="default">Essential</div>
+            <img src="https://i.ibb.co/Z1RCdgKc/81g-Nvt5wlz-L-AC-SL1500.jpg" class="item-image" alt="USB C Charging Station" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Power Grid — 10-Port GaN III Charging Station" data-pin-img="https://i.ibb.co/Z1RCdgKc/81g-Nvt5wlz-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">04</div>
             <h3 class="item-title">The Power Grid</h3>
             <p class="item-desc">A 10-port GaN III charging station. 320W total power output with 65W PD for laptops. Eliminates cable clutter by charging all your devices from one single plug.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>High Power</span></div>
-            <a href="https://amzn.to/4lYevmu" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4lYevmu" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 06 -->
     <div id="product-06" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Gaming Essential</div>
-            <img src="https://i.ibb.co/PZdrGr1h/718-U1m3-N-JL-AC-SL1500.jpg" class="item-image" alt="KDD RGB Headset Stand">
+            <div class="item-badge" data-type="default">Gaming Essential</div>
+            <img src="https://i.ibb.co/PZdrGr1h/718-U1m3-N-JL-AC-SL1500.jpg" class="item-image" alt="KDD RGB Headset Stand" loading="lazy">
+            <button class="pin-btn" data-pin-title="The RGB Sentinel — Headset Stand with Controller Hook" data-pin-img="https://i.ibb.co/PZdrGr1h/718-U1m3-N-JL-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">06</div>
             <h3 class="item-title">The RGB Sentinel</h3>
             <p class="item-desc">Declutter your battlestation. This headset stand features 9 RGB light modes to match your setup's vibe. Includes a rotating base and a detachable hook for controllers.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>RGB Lighting</span></div>
-            <a href="https://amzn.to/4bVZdvr" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4bVZdvr" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 10 -->
     <div id="product-10" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Problem Solver</div>
-            <img src="https://i.ibb.co/KkbzKjv/71w-Rb-SN8-ZVL-AC-SL1500.jpg" class="item-image" alt="Under Desk Cable Management Tray">
+            <div class="item-badge" data-type="default">Problem Solver</div>
+            <img src="https://i.ibb.co/KkbzKjv/71w-Rb-SN8-ZVL-AC-SL1500.jpg" class="item-image" alt="Under Desk Cable Management Tray" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Clutter Killer — No-Drill Cable Management Tray" data-pin-img="https://i.ibb.co/KkbzKjv/71w-Rb-SN8-ZVL-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">10</div>
             <h3 class="item-title">The Clutter Killer</h3>
             <p class="item-desc">I refused to look under my desk for years. It was a nightmare of wires. This tray took 2 minutes to clamp on. No drills, no holes. Mental clarity starts with a clean floor.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>No Drill Install</span></div>
-            <a href="https://amzn.to/4dmN9nX" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4dmN9nX" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 13 -->
     <div id="product-13" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Health Essential</div>
-            <img src="https://i.ibb.co/XZTtkRGd/61-P9-HPkgw-VL-AC-SL1500.jpg" class="item-image" alt="Lamicall Laptop Stand">
+            <div class="item-badge" data-type="default">Health Essential</div>
+            <img src="https://i.ibb.co/XZTtkRGd/61-P9-HPkgw-VL-AC-SL1500.jpg" class="item-image" alt="Lamicall Laptop Stand" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Ergonomic Riser — Aluminum Laptop Stand" data-pin-img="https://i.ibb.co/XZTtkRGd/61-P9-HPkgw-VL-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">13</div>
             <h3 class="item-title">The Ergonomic Riser</h3>
             <p class="item-desc">My neck used to hurt after 3 hours of work. This aluminum stand is sturdy, folds flat, and rotates 360 degrees. It instantly freed up desk space and saved my posture.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Foldable</span></div>
-            <a href="https://amzn.to/47HzwMr" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/47HzwMr" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 23 -->
     <div id="product-23" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">#1 Best Seller</div>
-            <img src="https://i.ibb.co/VWfyY7F7/819p8y4rGh-L-AC-SL1500.jpg" class="item-image" alt="Monitor Stand Riser">
+            <div class="item-badge" data-type="seller">#1 Best Seller</div>
+            <img src="https://i.ibb.co/VWfyY7F7/819p8y4rGh-L-AC-SL1500.jpg" class="item-image" alt="Monitor Stand Riser" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Command Center — Monitor Stand Riser with Drawer" data-pin-img="https://i.ibb.co/VWfyY7F7/819p8y4rGh-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">23</div>
             <h3 class="item-title">The Command Center</h3>
             <p class="item-desc">I was drowning in clutter. This riser changed everything. It lifted my monitors to eye level (goodbye neck pain) and gave me a secret drawer for all the ugly cables.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Hidden Drawer</span></div>
-            <a href="https://amzn.to/4bZC1MR" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4bZC1MR" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 24 -->
     <div id="product-24" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Eye-Care</div>
-            <img src="https://i.ibb.co/GvHvb68k/7180qk-Fb85-L-AC-SL1500.jpg" class="item-image" alt="Monitor Light Bar">
+            <div class="item-badge" data-type="default">Eye-Care</div>
+            <img src="https://i.ibb.co/GvHvb68k/7180qk-Fb85-L-AC-SL1500.jpg" class="item-image" alt="Monitor Light Bar" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Focus Bar — Monitor Light Bar" data-pin-img="https://i.ibb.co/GvHvb68k/7180qk-Fb85-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">24</div>
             <h3 class="item-title">The Focus Bar</h3>
             <p class="item-desc">I used to get headaches every night. This light bar sits on top of my monitor and shoots light backwards. It creates a soft halo that saves my eyes. A total health upgrade.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>9 Light Modes</span></div>
-            <a href="https://amzn.to/4sbCFeE" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4sbCFeE" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
-    <!-- SECTION 4: LIFESTYLE -->
-    <div class="category-header">
+    <!-- ═══════════════════════════════
+         SECTION 4: LIFESTYLE
+    ══════════════════════════════ -->
+    <div class="category-header" id="lifestyle">
         <h2 class="category-title">The Lifestyle</h2>
         <span class="category-sub">Health, Comfort & Decor</span>
     </div>
@@ -638,138 +1219,146 @@
     <!-- PRODUCT 05 -->
     <div id="product-05" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Health Essential</div>
-            <img src="https://i.ibb.co/N2yPW12j/71r-Wignils-L-AC-SX679.jpg" class="item-image" alt="Blue Light Glasses">
+            <div class="item-badge" data-type="default">Health Essential</div>
+            <img src="https://i.ibb.co/N2yPW12j/71r-Wignils-L-AC-SX679.jpg" class="item-image" alt="Blue Light Glasses" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Screen Shield — Blue Light Blocking Glasses" data-pin-img="https://i.ibb.co/N2yPW12j/71r-Wignils-L-AC-SX679.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">05</div>
             <h3 class="item-title">The Screen Shield</h3>
             <p class="item-desc">Stylish blue light blocking glasses. Reduces eye strain and prevents headaches. Includes two frame styles (Black and Clear) to match your look.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>2-Pack Included</span></div>
-            <a href="https://amzn.to/4v3Qe2q" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4v3Qe2q" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 11 -->
     <div id="product-11" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Decor</div>
-            <img src="https://i.ibb.co/RpGjy3hY/71e04tbsy8-L-AC-SL1500.jpg" class="item-image" alt="Lego Bonsai Tree">
+            <div class="item-badge" data-type="default">Decor</div>
+            <img src="https://i.ibb.co/RpGjy3hY/71e04tbsy8-L-AC-SL1500.jpg" class="item-image" alt="Lego Bonsai Tree" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Zen Garden — Lego Bonsai Tree" data-pin-img="https://i.ibb.co/RpGjy3hY/71e04tbsy8-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">11</div>
             <h3 class="item-title">The Zen Garden</h3>
             <p class="item-desc">My setup was missing something alive. I built this Lego Bonsai in an hour. It sits on my desk, doesn't need water, and adds a calm, organic vibe to the room.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>878 Pieces</span></div>
-            <a href="https://amzn.to/3Ohgki4" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/3Ohgki4" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 14 -->
-    <!-- NOTE: If your Pinterest Pin shows a "Cosmic Shield", change the image link below to match that product -->
     <div id="product-14" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Amazon's Choice</div>
-            <img src="https://i.ibb.co/j9Mqq9J5/61xn-CLDCl-GL-AC-SL1149.jpg" class="item-image" alt="Laptop Camera Cover">
+            <div class="item-badge" data-type="choice">Amazon's Choice</div>
+            <img src="https://i.ibb.co/j9Mqq9J5/61xn-CLDCl-GL-AC-SL1149.jpg" class="item-image" alt="Laptop Camera Cover" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Privacy Shield — Webcam Cover Slide" data-pin-img="https://i.ibb.co/j9Mqq9J5/61xn-CLDCl-GL-AC-SL1149.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">14</div>
             <h3 class="item-title">The Privacy Shield</h3>
-            <p class="item-desc">I used to wonder if I was being watched. Not anymore. These thin sliders take 2 seconds to apply. For under $7, it’s the cheapest insurance policy I’ve ever bought.</p>
+            <p class="item-desc">I used to wonder if I was being watched. Not anymore. These thin sliders take 2 seconds to apply. For under $7, it's the cheapest insurance policy I've ever bought.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>5-Pack Included</span></div>
-            <a href="https://amzn.to/4v9tTAB" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4v9tTAB" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 16 -->
     <div id="product-16" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Gamer Essential</div>
-            <img src="https://i.ibb.co/BhR6G1G/81-Ue-Jg5878-L-AC-SL1500.jpg" class="item-image" alt="Gaming Blanket">
+            <div class="item-badge" data-type="default">Gamer Essential</div>
+            <img src="https://i.ibb.co/BhR6G1G/81-Ue-Jg5878-L-AC-SL1500.jpg" class="item-image" alt="Gaming Blanket" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Gamer's Cloak — Glow-in-Dark Gaming Blanket" data-pin-img="https://i.ibb.co/BhR6G1G/81-Ue-Jg5878-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">16</div>
             <h3 class="item-title">The Gamer's Cloak</h3>
             <p class="item-desc">My room gets cold, but I hate pausing my game. This thing glows in the dark with a controller design. It's huge (50x60"), soft, and perfect for late-night grinding.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Glow in Dark</span></div>
-            <a href="https://amzn.to/4v3ULC5" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4v3ULC5" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 18 -->
     <div id="product-18" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Retro</div>
-            <img src="https://i.ibb.co/j9fpj3zB/81dph-WQL7-L-AC-SL1500.jpg" class="item-image" alt="Retro Desk Fan">
+            <div class="item-badge" data-type="default">Retro</div>
+            <img src="https://i.ibb.co/j9fpj3zB/81dph-WQL7-L-AC-SL1500.jpg" class="item-image" alt="Retro Desk Fan" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Retro Breeze — Rechargeable LED Desk Fan" data-pin-img="https://i.ibb.co/j9fpj3zB/81dph-WQL7-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">18</div>
             <h3 class="item-title">The Retro Breeze</h3>
             <p class="item-desc">My room gets hot, but ugly plastic fans ruin the aesthetic. This retro-style fan is rechargeable (no messy cables!), quiet, and has an LED glow underneath.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Rechargeable</span></div>
-            <a href="https://amzn.to/4tpRn2T" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4tpRn2T" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
-    <!-- PRODUCT 19 - UPDATED STRATEGY -->
+    <!-- PRODUCT 19 -->
     <div id="product-19" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Pro Audio Kit</div>
-            <img src="https://i.ibb.co/Qv7VY0fC/714-WPZTm-YL-AC-SL1500.jpg" class="item-image" alt="FIFINE Gaming Microphone">
+            <div class="item-badge" data-type="default">Pro Audio Kit</div>
+            <img src="https://i.ibb.co/Qv7VY0fC/714-WPZTm-YL-AC-SL1500.jpg" class="item-image" alt="FIFINE Gaming Microphone" loading="lazy">
+            <button class="pin-btn" data-pin-title="Pro Audio Kit Under $100 — FIFINE Dynamic Mic + Boom Arm" data-pin-img="https://i.ibb.co/Qv7VY0fC/714-WPZTm-YL-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">19</div>
             <h3 class="item-title">Pro Audio Kit Under $100</h3>
             <p class="item-desc">Get the pro streamer look without breaking the bank. This dynamic RGB microphone kit includes a sturdy boom arm—all for under $100. Features XLR/USB connectivity for future upgrades.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Boom Arm Included</span></div>
-            <a href="https://amzn.to/4sbq0bK" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4sbq0bK" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 20 -->
     <div id="product-20" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Overall Pick</div>
-            <img src="https://i.ibb.co/6Rjqk380/61-E4b-Tm1-QZL-AC-SL1500.jpg" class="item-image" alt="PS5 Controller Charger">
+            <div class="item-badge" data-type="default">Overall Pick</div>
+            <img src="https://i.ibb.co/6Rjqk380/61-E4b-Tm1-QZL-AC-SL1500.jpg" class="item-image" alt="PS5 Controller Charger" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Dual Dock — Officially Licensed PS5 Charger" data-pin-img="https://i.ibb.co/6Rjqk380/61-E4b-Tm1-QZL-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">20</div>
             <h3 class="item-title">The Dual Dock</h3>
             <p class="item-desc">Nothing kills the vibe faster than a dead controller. This officially licensed dock clicks them into place magnetically. No more wires across the floor.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Officially Licensed</span></div>
-            <a href="https://amzn.to/4v989VH" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4v989VH" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 21 -->
     <div id="product-21" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Amazon's Choice</div>
-            <img src="https://i.ibb.co/Csw4G5XF/81-UQqhw-Sd3-L-AC-SL1500.jpg" class="item-image" alt="Floating Shelves with LED">
+            <div class="item-badge" data-type="choice">Amazon's Choice</div>
+            <img src="https://i.ibb.co/Csw4G5XF/81-UQqhw-Sd3-L-AC-SL1500.jpg" class="item-image" alt="Floating Shelves with LED" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Glow Ledge — RGB Floating Shelves Set" data-pin-img="https://i.ibb.co/Csw4G5XF/81-UQqhw-Sd3-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">21</div>
             <h3 class="item-title">The Glow Ledge</h3>
             <p class="item-desc">My collectibles looked boring on a shelf. I swapped it for these floating shelves. The built-in RGB LED strip underneath creates a downlight effect that makes everything look premium.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Set of 2</span></div>
-            <a href="https://amzn.to/4vhh33B" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4vhh33B" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
     </div>
 
     <!-- PRODUCT 22 -->
     <div id="product-22" class="gallery-item">
         <div class="item-image-box">
-            <div class="item-badge">Minimalist</div>
-            <img src="https://i.ibb.co/CpPMm2S7/71e-XFKvf-Fv-L-AC-SL1500.jpg" class="item-image" alt="Black Minimalist Wall Clock">
+            <div class="item-badge" data-type="default">Minimalist</div>
+            <img src="https://i.ibb.co/CpPMm2S7/71e-XFKvf-Fv-L-AC-SL1500.jpg" class="item-image" alt="Black Minimalist Wall Clock" loading="lazy">
+            <button class="pin-btn" data-pin-title="The Silent Anchor — Minimalist Black Wall Clock" data-pin-img="https://i.ibb.co/CpPMm2S7/71e-XFKvf-Fv-L-AC-SL1500.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">22</div>
             <h3 class="item-title">The Silent Anchor</h3>
-            <p class="item-desc">I used to hate the sound of ticking clocks. This clock is completely silent. Glass marble face looks expensive, but it’s incredibly affordable. True minimalist vibes.</p>
+            <p class="item-desc">I used to hate the sound of ticking clocks. This clock is completely silent. Glass marble face looks expensive, but it's incredibly affordable. True minimalist vibes.</p>
             <div class="item-trust"><span>Prime Shipping</span> <span>Non-Ticking</span></div>
-            <a href="https://amzn.to/4dt68gC" target="_blank" class="btn-view">Check Price on Amazon</a>
+            <a href="https://amzn.to/4dt68gC" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon</a>
         </div>
-    </div> 
+    </div>
     
     <!-- JOURNAL SECTION -->
     <div class="journal-section">
@@ -793,34 +1382,30 @@
     
     <!-- FOOTER -->
     <footer>
-        
-        <!-- DISCLOSURE -->
         <div style="max-width: 600px; margin: 0 auto 30px; text-align: center;">
             <p style="font-size: 0.7rem; color: #555; line-height: 1.5; margin: 0;">
                 <strong>Disclosure:</strong> Monolith is a participant in the Amazon Services LLC Associates Program.
             </p>
         </div>
 
-        <!-- BOUNTY LINKS -->
         <div style="margin-bottom: 30px; text-align: center; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 20px 0;">
             <p style="font-size: 0.6rem; color: #999; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">
                 Monolith Recommends
             </p>
             <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
                 <div>
-                    <a href="https://amzn.to/4cvpKzC" target="_blank" rel="nofollow" style="color: #1a1a1a; text-decoration: none; font-size: 0.7rem; font-weight: 400;">
+                    <a href="https://amzn.to/4cvpKzC" target="_blank" rel="nofollow noopener noreferrer" style="color: #1a1a1a; text-decoration: none; font-size: 0.7rem; font-weight: 400;">
                         🎧 Try Audible Free
                     </a>
                 </div>
                 <div>
-                    <a href="https://amzn.to/47OGorn" target="_blank" rel="nofollow" style="color: #1a1a1a; text-decoration: none; font-size: 0.7rem; font-weight: 400;">
+                    <a href="https://amzn.to/47OGorn" target="_blank" rel="nofollow noopener noreferrer" style="color: #1a1a1a; text-decoration: none; font-size: 0.7rem; font-weight: 400;">
                          Try Prime Free
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- NAV LINKS -->
         <div style="margin-bottom: 20px; font-size: 0.7rem;">
             <a href="privacy.html" style="color: #999; text-decoration: none; margin: 0 10px;">Privacy Policy</a> |
             <a href="terms.html" style="color: #999; text-decoration: none; margin: 0 10px;">Terms of Service</a> |
@@ -831,6 +1416,254 @@
     </footer>
 
 </div>
+
+<!-- ═══════════════════════════════
+     FLOATING EMAIL BAR
+═════════════════════════════ -->
+<div class="email-bar" id="emailBar">
+    <span class="email-bar-text">Join the list</span>
+    <form id="emailBarForm" style="display:flex;gap:8px;align-items:center;">
+        <input type="email" class="email-bar-input" placeholder="your@email.com" required>
+        <button type="submit" class="email-bar-btn">Subscribe</button>
+    </form>
+    <button class="email-bar-close" id="emailBarClose">&times;</button>
+</div>
+
+<!-- ═══════════════════════════════
+     EXIT INTENT POPUP
+═════════════════════════════ -->
+<div class="email-popup-overlay" id="emailPopup">
+    <div class="email-popup">
+        <button class="email-popup-close" id="emailPopupClose">&times;</button>
+        <div class="email-popup-icon">⬛</div>
+        <span class="email-popup-label">The Inner Circle</span>
+        <h3 class="email-popup-title">Before You Go</h3>
+        <p class="email-popup-desc">Get setup inspiration and hidden gear finds delivered to your inbox. Once a week. No spam. Unsubscribe anytime.</p>
+        <form class="email-popup-form" id="emailPopupForm">
+            <input type="email" class="email-popup-input" placeholder="your@email.com" required>
+            <button type="submit" class="email-popup-btn">Join the List</button>
+        </form>
+        <button class="email-popup-decline" id="emailPopupDecline">No thanks, I'll figure it out alone</button>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════
+     BACK TO TOP
+═════════════════════════════ -->
+<button id="btt">↑</button>
+
+<script>
+(function() {
+
+    /* ═══════════════════════════════
+       MAILERLITE FORM SUBMISSION
+       
+       The hidden .ml-embedded div with data-form="4jLkOf" 
+       renders on page load via the Universal script.
+       When a user submits one of our custom forms, we find 
+       the MailerLite-rendered form and submit it with 
+       the email value injected.
+    ══════════════════════════════ */
+
+    function submitToMailerLite(email, callback) {
+        /* The MailerLite Universal script renders the form
+           inside the .ml-embedded container. We find it
+           by looking for forms that contain an email input
+           inside the hidden wrapper. */
+        var submitted = false;
+        
+        /* Try up to 3 times with 500ms delay in case ML 
+           hasn't finished rendering yet */
+        function attempt(attemptNum) {
+            if (attemptNum > 3 || submitted) return;
+            
+            var wrapper = document.querySelector('.ml-embedded');
+            if (!wrapper) {
+                setTimeout(function() { attempt(attemptNum + 1); }, 500);
+                return;
+            }
+            
+            var form = wrapper.querySelector('form');
+            if (!form) {
+                setTimeout(function() { attempt(attemptNum + 1); }, 500);
+                return;
+            }
+            
+            var input = form.querySelector('input[type="email"]') || 
+                        form.querySelector('input[name*="email"]') ||
+                        form.querySelector('input[name*="Email"]');
+            
+            if (input) {
+                /* Set the value using native setter to 
+                   trigger React/Vue change detection if any */
+                var nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+                    window.HTMLInputElement.prototype, 'value'
+                ).set;
+                nativeInputValueSetter.call(input, email);
+                input.dispatchEvent(new Event('input', { bubbles: true }));
+                input.dispatchEvent(new Event('change', { bubbles: true }));
+                
+                var btn = form.querySelector('button[type="submit"]') || 
+                          form.querySelector('input[type="submit"]');
+                if (btn) {
+                    btn.click();
+                    submitted = true;
+                }
+            }
+        }
+        
+        attempt(1);
+        
+        /* Always call callback so UI updates regardless 
+           of whether ML form submission succeeded */
+        if (callback) setTimeout(callback, 200);
+    }
+
+    /* ── Inline Form ── */
+    document.getElementById('emailInlineForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = this.querySelector('input').value;
+        submitToMailerLite(email, function() {
+            document.getElementById('emailInlineForm').style.display = 'none';
+            document.querySelector('.email-inline-sub').style.display = 'none';
+            document.querySelector('.email-inline-note').style.display = 'none';
+            document.getElementById('emailInlineSuccess').style.display = 'block';
+        });
+    });
+
+    /* ── Bar Form ── */
+    document.getElementById('emailBarForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = this.querySelector('input').value;
+        submitToMailerLite(email, function() {
+            document.getElementById('emailBar').classList.remove('visible');
+            sessionStorage.setItem('ml_subscribed', '1');
+        });
+    });
+
+    /* ── Popup Form ── */
+    document.getElementById('emailPopupForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = this.querySelector('input').value;
+        submitToMailerLite(email, function() {
+            document.getElementById('emailPopup').classList.remove('active');
+            sessionStorage.setItem('ml_subscribed', '1');
+        });
+    });
+
+    /* ═══════════════════════════════
+       STICKY NAV SHADOW ON SCROLL
+    ══════════════════════════════ */
+    var nav = document.getElementById('stickyNav');
+    window.addEventListener('scroll', function() {
+        nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    /* ═══════════════════════════════
+       BACK TO TOP
+    ══════════════════════════════ */
+    var btt = document.getElementById('btt');
+    window.addEventListener('scroll', function() {
+        btt.classList.toggle('show', window.scrollY > 600);
+    }, { passive: true });
+    btt.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ═══════════════════════════════
+       FLOATING EMAIL BAR
+       Shows after scrolling past inline section.
+       Respects: already subscribed, already closed,
+       mobile popup shown
+    ══════════════════════════════ */
+    var emailBar = document.getElementById('emailBar');
+    var inlineSection = document.getElementById('emailInline');
+    var barShown = false;
+
+    window.addEventListener('scroll', function() {
+        if (barShown) return;
+        if (sessionStorage.getItem('ml_subscribed')) return;
+        if (sessionStorage.getItem('ml_bar_closed')) return;
+        if (window.innerWidth < 768 && sessionStorage.getItem('ml_popup_seen')) return;
+
+        var inlineBottom = inlineSection.getBoundingClientRect().bottom;
+        if (inlineBottom < 0) {
+            emailBar.classList.add('visible');
+            barShown = true;
+        }
+    }, { passive: true });
+
+    document.getElementById('emailBarClose').addEventListener('click', function() {
+        emailBar.classList.remove('visible');
+        sessionStorage.setItem('ml_bar_closed', '1');
+    });
+
+    /* ═══════════════════════════════
+       EXIT INTENT POPUP (Desktop only)
+       Fires once when mouse leaves viewport top.
+    ══════════════════════════════ */
+    var popup = document.getElementById('emailPopup');
+    var popupFired = false;
+
+    document.addEventListener('mouseout', function(e) {
+        if (popupFired) return;
+        if (sessionStorage.getItem('ml_subscribed')) return;
+        if (window.innerWidth < 768) return;
+        
+        if (e.clientY <= 0) {
+            popup.classList.add('active');
+            popupFired = true;
+            sessionStorage.setItem('ml_popup_seen', '1');
+            emailBar.classList.remove('visible');
+        }
+    });
+
+    document.getElementById('emailPopupClose').addEventListener('click', function() {
+        popup.classList.remove('active');
+    });
+    document.getElementById('emailPopupDecline').addEventListener('click', function() {
+        popup.classList.remove('active');
+    });
+    popup.addEventListener('click', function(e) {
+        if (e.target === popup) popup.classList.remove('active');
+    });
+
+    /* ═══════════════════════════════
+       PINTEREST SAVE BUTTONS
+       Opens Pinterest create pin window
+    ══════════════════════════════ */
+    document.querySelectorAll('.pin-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var title = btn.getAttribute('data-pin-title') || '';
+            var img = btn.getAttribute('data-pin-img') || '';
+            var url = window.location.href;
+            window.open(
+                'https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(url) + 
+                '&description=' + encodeURIComponent(title) + 
+                '&media=' + encodeURIComponent(img),
+                'pinWindow',
+                'width=750,height=550,left=200,top=100'
+            );
+        });
+    });
+
+    /* ═══════════════════════════════
+       MOBILE: Show popup after 45s
+       on first visit (fallback since
+       no exit-intent on mobile)
+    ══════════════════════════════ */
+    if (window.innerWidth < 768 && 
+        !sessionStorage.getItem('ml_popup_seen') && 
+        !sessionStorage.getItem('ml_subscribed')) {
+        setTimeout(function() {
+            popup.classList.add('active');
+            sessionStorage.setItem('ml_popup_seen', '1');
+        }, 45000);
+    }
+
+})();
+</script>
 
 </body>
 </html>
