@@ -53,7 +53,7 @@
         .sticky-nav a:hover { color: #000; }
         .sticky-nav a.active-link { color: #000; font-weight: 600; }
 
-        header { text-align: center; margin-bottom: 60px; padding-top: 60px; }
+        header { text-align: center; margin-bottom: 40px; padding-top: 60px; }
         h1 {
             font-family: 'Cormorant Garamond', serif; font-size: 4.5rem;
             letter-spacing: 10px; text-transform: uppercase; margin: 0;
@@ -67,140 +67,8 @@
             border-top: 1px solid #ddd; padding-top: 15px;
         }
 
-        /* ═══ MERGED BLACK CARD ═══ */
-        .hero-card {
-            background: #000;
-            padding: 60px 30px;
-            text-align: center;
-            margin-bottom: 80px;
-            max-width: 560px;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 2px;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background:
-                radial-gradient(ellipse at 20% 50%, rgba(255,153,0,0.05) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 50%, rgba(255,153,0,0.03) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        .hero-card-label {
-            font-size: 0.55rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.25);
-            margin-bottom: 20px;
-            display: block;
-        }
-        .hero-card-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.6rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #fff;
-            margin: 0 0 8px 0;
-            line-height: 1.1;
-        }
-        .hero-card-sub {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.4);
-            margin: 0 0 30px 0;
-            font-weight: 300;
-        }
-        .hero-card-form {
-            display: flex;
-            gap: 0;
-            max-width: 400px;
-            margin: 0 auto 25px;
-        }
-        .hero-card-input {
-            flex: 1;
-            padding: 13px 18px;
-            border: 1px solid rgba(255,255,255,0.12);
-            border-right: none;
-            background: rgba(255,255,255,0.04);
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 300;
-            outline: none;
-            border-radius: 2px 0 0 2px;
-            transition: border-color 0.3s;
-        }
-        .hero-card-input::placeholder { color: rgba(255,255,255,0.2); }
-        .hero-card-input:focus { border-color: rgba(255,153,0,0.4); }
-        .hero-card-btn {
-            padding: 13px 24px;
-            background: #FF9900;
-            color: #fff;
-            border: 1px solid #FF9900;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.6rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 0 2px 2px 0;
-            transition: background 0.3s;
-            white-space: nowrap;
-        }
-        .hero-card-btn:hover { background: #e68a00; border-color: #e68a00; }
-
-        .hero-card-divider {
-            width: 40px;
-            height: 1px;
-            background: rgba(255,255,255,0.1);
-            margin: 0 auto 20px;
-        }
-
-        .hero-card-prime-text {
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.35);
-            margin: 0 0 12px 0;
-            font-weight: 300;
-        }
-        .hero-card-prime-link {
-            display: inline-block;
-            padding: 10px 22px;
-            border: 1px solid rgba(255,255,255,0.15);
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            font-size: 0.6rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            transition: all 0.3s;
-            border-radius: 2px;
-        }
-        .hero-card-prime-link:hover {
-            border-color: rgba(255,255,255,0.35);
-            color: #fff;
-        }
-
-        .hero-card-success {
-            display: none;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
-            letter-spacing: 2px;
-            color: #FF9900;
-            margin: 0 0 25px 0;
-        }
-
-        @media (max-width: 500px) {
-            .hero-card-form { flex-direction: column; gap: 8px; }
-            .hero-card-input { border-right: 1px solid rgba(255,255,255,0.12); border-radius: 2px; }
-            .hero-card-btn { border-radius: 2px; padding: 13px; }
-            .hero-card-title { font-size: 2rem; }
-        }
-
         .category-header {
-            margin-top: 100px; margin-bottom: 50px; text-align: center;
+            margin-top: 40px; margin-bottom: 50px; text-align: center;
             border-bottom: 1px solid #e0e0e0; padding-bottom: 20px;
         }
         .category-title {
@@ -247,10 +115,7 @@
             text-transform: uppercase; z-index: 10; border-radius: 2px;
         }
         .item-badge[data-type="viral"] { background-color: #E60023; color: #fff; }
-        .item-badge[data-type="seller"] { background-color: #FF9900; color: #fff; }
         .item-badge[data-type="choice"] { background-color: #1a1a1a; color: #fff; }
-        .item-badge[data-type="value"] { background-color: #28a745; color: #fff; }
-        .item-badge[data-type="default"] { background-color: #1a1a1a; color: #fff; }
 
         .item-info { padding: 10px 0; }
         .item-number {
@@ -434,25 +299,7 @@
         <span class="sub-header">Anime & Streetwear Drops</span>
     </header> 
 
-    <!-- ═══ MERGED CARD: Email + Prime ═══ -->
-    <div class="hero-card" id="heroCard">
-        <span class="hero-card-label">The Inner Circle</span>
-        <h2 class="hero-card-title">Join the List</h2>
-        <p class="hero-card-sub">New drops and hidden gear finds. Once a week.</p>
-        
-        <form class="hero-card-form" id="heroCardForm">
-            <input type="email" class="hero-card-input" placeholder="your@email.com" required>
-            <button type="submit" class="hero-card-btn">Subscribe</button>
-        </form>
-        <p class="hero-card-success" id="heroCardSuccess">You're in. Welcome.</p>
-
-        <div class="hero-card-divider"></div>
-
-        <p class="hero-card-prime-text">Not ready? Try Prime free for 30 days.</p>
-        <a href="https://amzn.to/4bYQHvF" target="_blank" rel="nofollow noopener noreferrer" class="hero-card-prime-link">Free Trial →</a>
-    </div>
-
-    <div class="category-header" id="drops" style="margin-top: 20px;">
+    <div class="category-header" id="drops">
         <h2 class="category-title">The Drops</h2>
         <span class="category-sub">Wear the identity, not just the aesthetic</span>
     </div>
@@ -561,17 +408,6 @@
         if (callback) setTimeout(callback, 200);
     }
 
-    document.getElementById('heroCardForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var email = this.querySelector('input').value;
-        submitToMailerLite(email, function() {
-            document.getElementById('heroCardForm').style.display = 'none';
-            document.querySelector('.hero-card-sub').style.display = 'none';
-            document.getElementById('heroCardSuccess').style.display = 'block';
-            sessionStorage.setItem('ml_subscribed', '1');
-        });
-    });
-
     document.getElementById('emailBarForm').addEventListener('submit', function(e) {
         e.preventDefault();
         var email = this.querySelector('input').value;
@@ -611,7 +447,7 @@
         if (sessionStorage.getItem('ml_subscribed')) return;
         if (sessionStorage.getItem('ml_bar_closed')) return;
         if (window.innerWidth < 768 && sessionStorage.getItem('ml_popup_seen')) return;
-        if (window.scrollY > 1200) {
+        if (window.scrollY > 800) {
             emailBar.classList.add('visible');
             barShown = true;
         }
