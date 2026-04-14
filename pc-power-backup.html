@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The False Security of the Power Strip | MONOLITH</title> 
+    
+    <meta name="description" content="High-end components are protected by software and casings, but remain entirely vulnerable to the electrical current that powers them. We break down how a UPS actually works.">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬛</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '2253249');
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f6;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        .sticky-nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(248, 248, 246, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e5e5e5;
+            text-align: center;
+        }
+        .sticky-nav a {
+            font-size: 0.6rem; letter-spacing: 2.5px; text-transform: uppercase;
+            color: #999; text-decoration: none; padding: 14px 18px;
+            display: inline-block; transition: color 0.3s;
+        }
+        .sticky-nav a:hover { color: #000; }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 80px;
+        }
+        .article-back {
+            font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase;
+            color: #999; text-decoration: none; margin-bottom: 30px; display: inline-block;
+        }
+        .article-back:hover { color: #000; }
+        
+        .article-title {
+            font-family: 'Cormorant Garamond', serif; font-size: 3rem;
+            font-weight: 300; letter-spacing: 2px; margin: 0 0 20px 0;
+            line-height: 1.2; color: #000;
+        }
+        .article-subtitle {
+            font-size: 0.95rem; color: #888; font-weight: 300;
+            max-width: 500px; margin: 0 auto; line-height: 1.8;
+        }
+
+        .article-body {
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            color: #333;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+        .article-body p {
+            margin-bottom: 30px;
+        }
+        .article-body h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 60px 0 20px 0;
+            letter-spacing: 1px;
+            color: #000;
+        }
+        .article-body em {
+            font-style: normal;
+            background: linear-gradient(to top, rgba(255, 153, 0, 0.15) 40%, transparent 40%);
+        }
+
+        .article-cta {
+            text-align: center;
+            margin: 60px 0 80px;
+            padding: 50px 20px;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .article-cta-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+        }
+        .article-cta-sub {
+            font-size: 0.85rem;
+            color: #888;
+            margin: 0 0 25px 0;
+        }
+        .btn-view {
+            display: inline-block; padding: 14px 30px; text-decoration: none;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; color: #fff; background-color: #FF9900;
+            border: 2px solid #FF9900; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s; border-radius: 2px;
+        }
+        .btn-view:hover {
+            background-color: #e68a00; border-color: #e68a00;
+            color: #fff; transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center; margin-top: 40px; padding-top: 40px;
+            border-top: 1px solid #ddd; font-size: 0.6rem; color: #ccc;
+            letter-spacing: 2px; text-transform: uppercase; padding-bottom: 80px;
+        }
+
+        @media (max-width: 600px) {
+            .article-title { font-size: 2.2rem; }
+            .article-body { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="sticky-nav">
+    <a href="index.html#atmosphere">Setups</a>
+    <a href="index.html#tools">Tools</a>
+    <a href="index.html#foundation">Foundation</a>
+    <a href="apparel.html">Wardrobe</a>
+</nav>
+
+<div class="container">
+
+    <div class="article-header">
+        <a href="index.html" class="article-back">← Back to Setups</a>
+        <h1 class="article-title">The False Security of the Power Strip</h1>
+        <p class="article-subtitle">High-end components are protected by software and casings, but remain entirely vulnerable to the electrical current that powers them.</p>
+    </div> 
+
+    <div class="article-body">
+        
+        <p>There is a distinct imbalance in how most users approach setup protection. Thousands of dollars are invested in processors, graphics cards, and monitors, while the mechanism delivering power to these components is treated as an afterthought.</p>
+
+        <p>The standard defense is a plastic power strip equipped with a basic surge protector. This device is designed to block sudden spikes in voltage—like those caused by a lightning strike. However, it offers zero defense against the most common power anomaly: the momentary drop.</p>
+
+        <h2>The Momentary Drop</h2>
+
+        <p>A drop occurs when the electrical current dips for a fraction of a second. This happens frequently in older buildings, during heavy storms, or simply when a high-draw appliance (like an air conditioner or a microwave) turns on in another room. </p>
+
+        <p>To a standard power strip, this drop looks like normal operation. To a desktop PC, however, the sudden loss of current is catastrophic. The power supply unit (PSU) trips, and the system shuts down instantly. The immediate loss is unsaved work or a ruined multiplayer match. The long-term damage is data corruption on the SSD or physical degradation of the motherboard.</p>
+
+        <h2>Bridging the Gap</h2>
+
+        <p>An Uninterruptible Power Supply (UPS) bridges this gap. Unlike a power strip, a UPS contains an internal battery. When the current drops, the UPS instantly draws from the battery, supplying the PC with seamless, continuous power. The computer does not register a disruption.</p>
+
+        <p>The APC BE600M1 is engineered precisely for this scenario. It provides enough battery runtime to navigate through a brief outage or, if the power fails completely, to safely shut down the system without data loss. Securing a setup is not just about blocking surges; it is about ensuring continuity. The BE600M1 provides that continuity for a fraction of the cost of a single hardware replacement.</p>
+
+    </div>
+
+    <div class="article-cta">
+        <h3 class="article-cta-title">The Rank Saver</h3>
+        <p class="article-cta-sub">APC BE600M1 600VA Battery Backup</p>
+        <a href="index.html#product-35" class="btn-view">View Specifications</a>
+    </div>
+
+</div>
+
+<footer>
+    MONOLITH &copy; 2026
+</footer>
+
+</body>
+</html>
