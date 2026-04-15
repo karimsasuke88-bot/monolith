@@ -24,7 +24,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">
     {
@@ -79,7 +79,7 @@
         .sticky-nav a:hover { color: #000; }
         .sticky-nav a.active-link { color: #000; font-weight: 600; }
 
-        header { text-align: center; margin-bottom: 40px; padding-top: 60px; }
+        header { text-align: center; margin-bottom: 20px; padding-top: 60px; }
         h1 {
             font-family: 'Cormorant Garamond', serif; font-size: 4.5rem;
             letter-spacing: 10px; text-transform: uppercase; margin: 0;
@@ -93,9 +93,26 @@
             border-top: 1px solid #ddd; padding-top: 15px;
         }
 
+        .disclosure-bar {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 12px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 2px;
+        }
+        .disclosure-bar p {
+            font-size: 0.65rem;
+            color: #999;
+            margin: 0;
+            letter-spacing: 0.3px;
+            line-height: 1.6;
+        }
+        .disclosure-bar strong { color: #666; }
+
         .intro-note {
             max-width: 540px;
-            margin: 0 auto;
+            margin: 0 auto 0;
             text-align: center;
             font-size: 0.85rem;
             color: #888;
@@ -165,7 +182,7 @@
         }
         .item-title {
             font-family: 'Cormorant Garamond', serif; font-size: 2.2rem;
-            font-weight: 600; margin: 0 0 20px 0; color: #000; line-height: 1.2;
+            font-weight: 600; margin: 0 0 15px 0; color: #000; line-height: 1.2;
         }
         .item-desc { font-size: 0.95rem; color: #555; margin-bottom: 15px; font-weight: 300; }
         .item-trust {
@@ -175,20 +192,68 @@
         .item-trust span { margin-right: 15px; display: inline-block; }
         .item-trust span::before { content: "✓ "; color: #28a745; font-weight: bold; }
 
-        .item-price-hint {
-            font-size: 0.85rem;
-            color: #28a745;
-            font-weight: 600;
-            margin-bottom: 6px;
-            letter-spacing: 0.3px;
+        .item-price-block {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
         }
-        .item-price-hint .price-prime {
-            font-size: 0.7rem;
+        .item-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+            font-family: 'Inter', sans-serif;
+        }
+        .item-price-note {
+            font-size: 0.75rem;
             color: #999;
             font-weight: 400;
-            margin-left: 6px;
+        }
+        .item-price-prime {
+            display: inline-block;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: #28a745;
+            background: rgba(40,167,69,0.08);
+            padding: 3px 8px;
+            border-radius: 2px;
+        }
+
+        .item-why {
+            margin-bottom: 15px;
+        }
+        .item-why h4 {
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+            color: #999;
+        }
+        .item-why ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .item-why li {
+            font-size: 0.8rem;
+            color: #555;
+            margin-bottom: 4px;
+            padding-left: 14px;
+            position: relative;
+            line-height: 1.5;
+        }
+        .item-why li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: 700;
+            font-size: 0.75rem;
         }
 
         .item-fit-note {
@@ -205,15 +270,16 @@
         }
 
         .btn-view {
-            display: inline-block; padding: 14px 30px; text-decoration: none;
+            display: inline-block; padding: 16px 36px; text-decoration: none;
             font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
             text-transform: uppercase; color: #fff; background-color: #1a1a1a;
-            border: 2px solid #1a1a1a; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 2px solid #1a1a1a; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             transition: all 0.3s; border-radius: 2px;
         }
         .btn-view:hover {
             background-color: #333; border-color: #333;
             color: #fff; transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
 
         footer {
@@ -333,15 +399,17 @@
         #btt.show { opacity: 1; pointer-events: auto; }
         #btt:hover { background: #333; transform: translateY(-2px); }
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             .gallery-item { grid-template-columns: 1fr; gap: 30px; margin-bottom: 60px; }
             .gallery-item:nth-child(even) { direction: ltr; }
+            .item-image-box { max-width: 400px; margin: 0 auto; }
             h1 { font-size: 2.5rem; letter-spacing: 5px; }
             .category-title { font-size: 1.8rem; }
             .email-popup { padding: 50px 25px 40px; }
             .email-popup-title { font-size: 1.8rem; }
             .email-bar { padding-bottom: 24px; }
             #btt { bottom: 70px; }
+            .btn-view { display: block; text-align: center; width: 100%; box-sizing: border-box; }
         }
         @media (max-width: 640px) {
             .email-bar-text { display: none; }
@@ -369,6 +437,10 @@
         <span class="sub-header">Anime & Streetwear Drops</span>
     </header>
 
+    <div class="disclosure-bar">
+        <p><strong>How this works:</strong> We independently select every product. When you buy through our links, we may earn a small commission at no extra cost to you. <a href="privacy.html" style="color:#999;text-decoration:underline;text-underline-offset:2px;">Full disclosure</a></p>
+    </div>
+
     <p class="intro-note">Every hoodie here was checked against three things: does the print survive washing, does the sizing match the chart, and would you wear it outside a convention. <strong>Most anime hoodies fail at least one. These didn't.</strong></p>
 
     <div class="category-header" id="drops">
@@ -385,11 +457,23 @@
         <div class="item-info">
             <div class="item-number">01</div>
             <h3 class="item-title">The Six Eyes</h3>
-            <div class="item-price-hint">Under $50<span class="price-prime">Prime</span></div>
             <p class="item-desc">A regular hoodie keeps you warm. This one gives you an entire identity. The 3D printed design means you don't have to build a cosplay from scratch — just throw it on. Perfect for conventions, late-night anime binges, or just flexing your Jujutsu Kaisen taste without saying a word.</p>
+            <div class="item-why">
+                <h4>Why we picked it</h4>
+                <ul>
+                    <li>Full 3D print — no iron-on, no peeling</li>
+                    <li>No cosplay build needed — throw it on and go</li>
+                    <li>Covers front and sleeves for maximum impact</li>
+                </ul>
+            </div>
+            <div class="item-price-block">
+                <span class="item-price">$35–$50</span>
+                <span class="item-price-note">Price varies</span>
+                <span class="item-price-prime">Prime</span>
+            </div>
             <div class="item-trust"><span>3D Print</span> <span>Prime Shipping</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> Oversized cut. If you're between sizes, order your normal size. 3D print covers front and sleeves — back is solid black.</div>
-            <a href="https://amzn.to/4ej29Uf" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Sizes on Amazon →</a>
+            <a href="https://amzn.to/4ej29Uf" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon →</a>
         </div>
     </div>
 
@@ -402,11 +486,23 @@
         <div class="item-info">
             <div class="item-number">02</div>
             <h3 class="item-title">The Hashira</h3>
-            <div class="item-price-hint">Under $50<span class="price-prime">Prime</span></div>
-            <p class="item-desc">You don't need a sword to look like you belong in the Demon Slayer Corps. This pullover does the heavy lifting for you. The kangaroo pocket keeps your hands warm during those 3 AM ranked sessions, and the manga graphic actually looks good — no cheap iron-on vibes. Throw it on and you're officially off-duty.</p>
+            <p class="item-desc">You don't need a sword to look like you belong in the Demon Slayer Corps. This pullover does the heavy lifting for you. The kangaroo pocket keeps your hands warm during those 3 AM ranked sessions, and the manga graphic actually looks good — no cheap iron-on vibes.</p>
+            <div class="item-why">
+                <h4>Why we picked it</h4>
+                <ul>
+                    <li>Manga graphic looks premium — not a cheap iron-on</li>
+                    <li>Kangaroo pocket for 3 AM gaming sessions</li>
+                    <li>Simple enough to wear anywhere</li>
+                </ul>
+            </div>
+            <div class="item-price-block">
+                <span class="item-price">$30–$45</span>
+                <span class="item-price-note">Price varies</span>
+                <span class="item-price-prime">Prime</span>
+            </div>
             <div class="item-trust"><span>Kangaroo Pocket</span> <span>Prime Shipping</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> True to size. Standard pullover cut. Graphic is front-only — back is solid black. Wash inside out to preserve the print.</div>
-            <a href="https://amzn.to/429cYAR" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Sizes on Amazon →</a>
+            <a href="https://amzn.to/429cYAR" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon →</a>
         </div>
     </div>
 
@@ -419,35 +515,61 @@
         <div class="item-info">
             <div class="item-number">03</div>
             <h3 class="item-title">The Blue Flame</h3>
-            <div class="item-price-hint">Under $50<span class="price-prime">Prime</span></div>
             <p class="item-desc">Most anime hoodies look like kids' costumes. This one looks like it belongs at a grunge concert. Dabi's design is inherently dark — the scars, the staples, the burnt aesthetic. It translates into streetwear effortlessly. You don't have to explain it to people who get it. And for those who don't, it just looks like a premium oversized pullover.</p>
+            <div class="item-why">
+                <h4>Why we picked it</h4>
+                <ul>
+                    <li>Works as streetwear even if people don't know MHA</li>
+                    <li>Soft fleece interior — not thin costume fabric</li>
+                    <li>1.3K+ ratings from actual buyers</li>
+                    <li>Dabi's aesthetic is inherently wearable — dark, minimal, grunge</li>
+                </ul>
+            </div>
+            <div class="item-price-block">
+                <span class="item-price">$35–$50</span>
+                <span class="item-price-note">Price varies</span>
+                <span class="item-price-prime">Prime</span>
+            </div>
             <div class="item-trust"><span>1.3K+ Ratings</span> <span>Soft Fleece</span></div>
-            <div class="item-fit-note"><strong>Fit:</strong> Oversized — order your normal size for the baggy look, size down if you want it fitted. Soft fleece interior. Works as standalone streetwear even if you don't watch MHA.</div>
-            <a href="https://amzn.to/4cc2jeR" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Sizes on Amazon →</a>
+            <div class="item-fit-note"><strong>Fit:</strong> Oversized — order your normal size for the baggy look, size down if you want it fitted. Soft fleece interior.</div>
+            <a href="https://amzn.to/4cc2jeR" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon →</a>
         </div>
     </div>
 
     <div id="product-04" class="gallery-item">
         <div class="item-image-box">
             <div class="item-badge" data-type="seller">Best Seller</div>
-            <img src="https://i.ibb.co/HpqKXTZr/71c8o-DFYPs-L-AC-SX679.jpg" class="item-image" alt="Ripple Junction Naruto Akatsuki anti-leaf clouds black fleece hoodie under $40 with Prime" loading="lazy">
-            <button class="pin-btn" data-pin-title="Ripple Junction Akatsuki Hoodie Under $40 — Prime" data-pin-desc="Ripple Junction licensed Akatsuki cloud hoodie. Black fleece red cloud print. Doesnt crack after one wash. 1858 ratings 4.7 stars. Under $40 with Prime. #akatsuki #narutohoodie #animehoodie" data-pin-img="https://i.ibb.co/HpqKXTZr/71c8o-DFYPs-L-AC-SX679.jpg">Save</button>
+            <img src="https://i.ibb.co/HpqKXTZr/71c8o-DFYPs-L-AC-SX679.jpg" class="item-image" alt="Ripple Junction Naruto Akatsuki anti-leaf clouds black fleece hoodie with Prime" loading="lazy">
+            <button class="pin-btn" data-pin-title="Ripple Junction Akatsuki Hoodie — Prime" data-pin-desc="Ripple Junction licensed Akatsuki cloud hoodie. Black fleece red cloud print. Doesnt crack after one wash. 1858 ratings 4.7 stars. Prime shipping. #akatsuki #narutohoodie #animehoodie" data-pin-img="https://i.ibb.co/HpqKXTZr/71c8o-DFYPs-L-AC-SX679.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">04</div>
             <h3 class="item-title">The Red Cloud</h3>
-            <div class="item-price-hint">Under $40<span class="price-prime">Prime</span></div>
             <p class="item-desc">Black fleece with red cloud print. Ripple Junction does licensed merch, not the cheap unlicensed stuff. The print doesn't crack after one wash. Wear it anywhere — class, store, gym — the only people who'll know are the ones who know.</p>
+            <div class="item-why">
+                <h4>Why we picked it</h4>
+                <ul>
+                    <li>Ripple Junction = officially licensed — no bootleg quality</li>
+                    <li>Print survives washing — doesn't crack or peel</li>
+                    <li>Subtle enough to wear anywhere — only anime fans will recognize it</li>
+                    <li>1.8K+ ratings at 4.7 stars</li>
+                </ul>
+            </div>
+            <div class="item-price-block">
+                <span class="item-price">$25–$40</span>
+                <span class="item-price-note">Price varies</span>
+                <span class="item-price-prime">Prime</span>
+            </div>
             <div class="item-trust"><span>Ripple Junction Licensed</span> <span>Prime Shipping</span> <span>1.8K+ Ratings</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> True to size. Ripple Junction uses standard US sizing — no surprises. Red cloud print is front-only. Black fleece holds up well after multiple washes.</div>
-            <a href="https://amzn.to/4my4ehe" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Sizes on Amazon →</a>
+            <a href="https://amzn.to/4my4ehe" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon →</a>
         </div>
     </div>
 
     <footer>
         <div class="footer-disclosure">
             <p>
-                <strong>Disclosure:</strong> Monolith is a participant in the Amazon Services LLC Associates Program. Prices shown are approximate and may vary. As an Amazon Associate we earn from qualifying purchases.
+                <strong>Disclosure:</strong> Monolith is a participant in the Amazon Services LLC Associates Program. We earn from qualifying purchases at no extra cost to you. Prices shown are approximate ranges and may vary. All product selections are our own.
             </p>
         </div>
         <div style="margin-bottom: 20px; font-size: 0.7rem;">
@@ -456,7 +578,7 @@
             <a href="terms.html" style="color: #999; text-decoration: none; margin: 0 10px;">Terms of Service</a> |
             <a href="mailto:monolith.finds@gmail.com" style="color: #999; text-decoration: none; margin: 0 10px;">Contact</a>
         </div>
-        MONOLITH &copy; 2026
+        MONOLITH &copy; 2025
     </footer>
 
 </div>
