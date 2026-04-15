@@ -32,24 +32,15 @@
         "@type": "ItemList",
         "name": "Anime Hoodies — Vetted for Quality",
         "description": "Curated anime streetwear hoodies with Prime shipping",
-        "numberOfItems": 6,
+        "numberOfItems": 5,
         "itemListElement": [
             {"@type":"ListItem","position":1,"name":"Gojo Satoru 3D Cosplay Hoodie","url":"https://monolith-tech.vercel.app/apparel.html#product-01"},
             {"@type":"ListItem","position":2,"name":"Demon Slayer Manga Pullover Hoodie","url":"https://monolith-tech.vercel.app/apparel.html#product-02"},
             {"@type":"ListItem","position":3,"name":"Dabi Grunge Streetwear Hoodie","url":"https://monolith-tech.vercel.app/apparel.html#product-03"},
             {"@type":"ListItem","position":4,"name":"Naruto Akatsuki Cloud Hoodie","url":"https://monolith-tech.vercel.app/apparel.html#product-04"},
-            {"@type":"ListItem","position":5,"name":"Nezuko Demon Slayer Pullover Hoodie","url":"https://monolith-tech.vercel.app/apparel.html#product-05"},
-            {"@type":"ListItem","position":6,"name":"Nezuko Demon Slayer Alternate Art Hoodie","url":"https://monolith-tech.vercel.app/apparel.html#product-06"}
+            {"@type":"ListItem","position":5,"name":"Nezuko Demon Slayer Pullover Hoodie","url":"https://monolith-tech.vercel.app/apparel.html#product-05"}
         ]
     }
-    </script>
-
-    <script>
-        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-        ml('account', '2253249');
     </script>
 
     <style>
@@ -421,10 +412,6 @@
 </head>
 <body>
 
-<div style="position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;height:0;overflow:hidden;">
-    <div class="ml-embedded" data-form="4jLkOf"></div>
-</div>
-
 <nav class="sticky-nav" id="stickyNav">
     <a href="index.html#atmosphere">Setups</a>
     <a href="index.html#tools">Tools</a>
@@ -596,8 +583,8 @@
             <div class="item-fit-note"><strong>Fit:</strong> Unisex — standard sizing. Order your normal size. Wash inside out to keep the print sharp. 90-day low price means Amazon fluctuates it — grab it when you see under $20.</div>
             <a href="https://amzn.to/4280RnF" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Check Price on Amazon →</a>
         </div>
-    </div> 
-    
+    </div>
+
     <footer>
         <div class="footer-disclosure">
             <p>
@@ -610,7 +597,7 @@
             <a href="terms.html" style="color: #999; text-decoration: none; margin: 0 10px;">Terms of Service</a> |
             <a href="mailto:monolith.finds@gmail.com" style="color: #999; text-decoration: none; margin: 0 10px;">Contact</a>
         </div>
-        MONOLITH &copy; 2026
+        MONOLITH &copy; 2025
     </footer>
 
 </div>
@@ -644,32 +631,45 @@
 <script>
 (function() {
 
-    function submitToMailerLite(email, callback) {
-        var submitted = false;
-        function attempt(n) {
-            if (n > 3 || submitted) return;
-            var wrapper = document.querySelector('.ml-embedded');
-            if (!wrapper) { setTimeout(function() { attempt(n + 1); }, 500); return; }
-            var form = wrapper.querySelector('form');
-            if (!form) { setTimeout(function() { attempt(n + 1); }, 500); return; }
-            var input = form.querySelector('input[type="email"]') || form.querySelector('input[name*="email"]') || form.querySelector('input[name*="Email"]');
-            if (input) {
-                var setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-                setter.call(input, email);
-                input.dispatchEvent(new Event('input', { bubbles: true }));
-                input.dispatchEvent(new Event('change', { bubbles: true }));
-                var btn = form.querySelector('button[type="submit"]') || form.querySelector('input[type="submit"]');
-                if (btn) { btn.click(); submitted = true; }
-            }
+    function subscribeEmail(email, callback) {
+        var cbName = 'mlcb_' + Date.now() + Math.random().toString(36).slice(2, 7);
+        var finished = false;
+        window[cbName] = function(resp) {
+            if (finished) return;
+            finished = true;
+            cleanup();
+            if (callback) callback(resp);
+        };
+        function cleanup() {
+            delete window[cbName];
+            var s = document.getElementById(cbName);
+            if (s && s.parentNode) s.parentNode.removeChild(s);
         }
-        attempt(1);
-        if (callback) setTimeout(callback, 200);
+        var script = document.createElement('script');
+        script.id = cbName;
+        script.src = 'https://assets.mailerlite.com/jsonp/2253249/forms/4jLkOf/subscribe'
+            + '?callback=' + cbName
+            + '&fields%5Bemail%5D=' + encodeURIComponent(email)
+            + '&ml-submit=1';
+        script.onerror = function() {
+            if (finished) return;
+            finished = true;
+            cleanup();
+            if (callback) callback(null);
+        };
+        document.head.appendChild(script);
+        setTimeout(function() {
+            if (finished) return;
+            finished = true;
+            cleanup();
+            if (callback) callback(null);
+        }, 5000);
     }
 
     document.getElementById('emailBarForm').addEventListener('submit', function(e) {
         e.preventDefault();
         var email = this.querySelector('input').value;
-        submitToMailerLite(email, function() {
+        subscribeEmail(email, function() {
             document.getElementById('emailBar').classList.remove('visible');
             sessionStorage.setItem('ml_subscribed', '1');
         });
@@ -678,7 +678,7 @@
     document.getElementById('emailPopupForm').addEventListener('submit', function(e) {
         e.preventDefault();
         var email = this.querySelector('input').value;
-        submitToMailerLite(email, function() {
+        subscribeEmail(email, function() {
             document.getElementById('emailPopup').classList.remove('active');
             sessionStorage.setItem('ml_subscribed', '1');
         });
@@ -699,7 +699,6 @@
 
     var emailBar = document.getElementById('emailBar');
     var barShown = false;
-
     window.addEventListener('scroll', function() {
         if (barShown) return;
         if (sessionStorage.getItem('ml_subscribed')) return;
@@ -710,7 +709,6 @@
             barShown = true;
         }
     }, { passive: true });
-
     document.getElementById('emailBarClose').addEventListener('click', function() {
         emailBar.classList.remove('visible');
         sessionStorage.setItem('ml_bar_closed', '1');
@@ -718,7 +716,6 @@
 
     var popup = document.getElementById('emailPopup');
     var popupFired = false;
-
     document.addEventListener('mouseout', function(e) {
         if (popupFired) return;
         if (sessionStorage.getItem('ml_subscribed')) return;
@@ -730,7 +727,6 @@
             emailBar.classList.remove('visible');
         }
     });
-
     document.getElementById('emailPopupClose').addEventListener('click', function() {
         popup.classList.remove('active');
     });
@@ -749,9 +745,9 @@
             var img = btn.getAttribute('data-pin-img') || '';
             var url = window.location.href;
             window.open(
-                'https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(url) +
-                '&description=' + encodeURIComponent(title + '\n\n' + desc) +
-                '&media=' + encodeURIComponent(img),
+                'https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(url)
+                + '&description=' + encodeURIComponent(title + '\n\n' + desc)
+                + '&media=' + encodeURIComponent(img),
                 'pinWindow', 'width=750,height=550,left=200,top=100'
             );
         });
