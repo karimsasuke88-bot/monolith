@@ -266,6 +266,21 @@
             font-weight: 600;
         }
 
+        .item-styling {
+            font-size: 0.75rem;
+            color: #555;
+            margin-bottom: 25px;
+            padding: 10px 14px;
+            border-left: 2px solid #1a1a1a;
+            line-height: 1.7;
+            font-style: italic;
+        }
+        .item-styling strong {
+            color: #1a1a1a;
+            font-weight: 700;
+            font-style: normal;
+        }
+
         .btn-view {
             display: inline-block; padding: 16px 36px; text-decoration: none;
             font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
@@ -326,67 +341,6 @@
         }
         .email-bar-close:hover { color: #000; }
 
-        .email-popup-overlay {
-            position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
-            display: flex; align-items: center; justify-content: center;
-            opacity: 0; visibility: hidden; transition: opacity 0.4s, visibility 0.4s;
-            padding: 20px;
-        }
-        .email-popup-overlay.active { opacity: 1; visibility: visible; }
-        .email-popup {
-            background: #fff; max-width: 460px; width: 100%;
-            padding: 60px 40px 50px; text-align: center; position: relative;
-            border-radius: 2px; transform: translateY(20px) scale(0.97);
-            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .email-popup-overlay.active .email-popup { transform: translateY(0) scale(1); }
-        .email-popup-close {
-            position: absolute; top: 20px; right: 20px; background: none;
-            border: none; color: #ccc; cursor: pointer; font-size: 1.4rem;
-            padding: 4px; line-height: 1; transition: color 0.3s;
-        }
-        .email-popup-close:hover { color: #000; }
-        .email-popup-icon {
-            width: 48px; height: 48px; border: 1px solid #e0e0e0;
-            border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; margin: 0 auto 25px; font-size: 1.2rem;
-        }
-        .email-popup-label {
-            font-size: 0.55rem; letter-spacing: 4px; text-transform: uppercase;
-            color: #bbb; margin-bottom: 18px; display: block;
-        }
-        .email-popup-title {
-            font-family: 'Cormorant Garamond', serif; font-size: 2.2rem;
-            font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-            color: #000; margin: 0 0 10px 0; line-height: 1.1;
-        }
-        .email-popup-desc {
-            font-size: 0.9rem; color: #888; margin: 0 0 30px 0;
-            font-weight: 300; line-height: 1.7;
-        }
-        .email-popup-form { display: flex; flex-direction: column; gap: 10px; }
-        .email-popup-input {
-            padding: 14px 20px; border: 1px solid #ddd; background: #f8f8f6;
-            font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #1a1a1a;
-            outline: none; border-radius: 2px; transition: border-color 0.3s; text-align: center;
-        }
-        .email-popup-input::placeholder { color: #bbb; letter-spacing: 0.5px; }
-        .email-popup-input:focus { border-color: #000; }
-        .email-popup-btn {
-            padding: 14px 28px; background: #000; color: #fff; border: 1px solid #000;
-            font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 700;
-            letter-spacing: 2px; text-transform: uppercase; cursor: pointer;
-            border-radius: 2px; transition: background 0.3s;
-        }
-        .email-popup-btn:hover { background: #333; }
-        .email-popup-decline {
-            font-size: 0.65rem; color: #ccc; margin-top: 12px; cursor: pointer;
-            background: none; border: none; text-decoration: underline;
-            text-underline-offset: 3px; transition: color 0.3s; font-family: 'Inter', sans-serif;
-        }
-        .email-popup-decline:hover { color: #999; }
-
         #btt {
             position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px;
             background: #000; color: #fff; border: none; cursor: pointer; font-size: 1.1rem;
@@ -402,8 +356,6 @@
             .item-image-box { max-width: 400px; margin: 0 auto; }
             h1 { font-size: 2.5rem; letter-spacing: 5px; }
             .category-title { font-size: 1.8rem; }
-            .email-popup { padding: 50px 25px 40px; }
-            .email-popup-title { font-size: 1.8rem; }
             #btt { bottom: 70px; }
             .btn-view { display: block; text-align: center; width: 100%; box-sizing: border-box; }
         }
@@ -464,6 +416,7 @@
             </div>
             <div class="item-trust"><span>3D Print</span> <span>Prime Shipping</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> Oversized cut. If you're between sizes, order your normal size. 3D print covers front and sleeves — back is solid black.</div>
+            <div class="item-styling"><strong>The silhouette:</strong> Straight-leg black jeans and clean white sneakers. No logos. No competing graphics. The 3D print is loud—if you wear patterned pants, it becomes a mess. Treat the hoodie like a statement piece and let the rest of the outfit disappear.</div>
             <a href="https://amzn.to/4ej29Uf" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
         </div>
     </div>
@@ -493,6 +446,7 @@
             </div>
             <div class="item-trust"><span>Kangaroo Pocket</span> <span>Prime Shipping</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> True to size. Standard pullover cut. Graphic is front-only — back is solid black. Wash inside out to preserve the print.</div>
+            <div class="item-styling"><strong>The silhouette:</strong> Black sweatpants or relaxed-fit jeans. This isn't a fit for chunky boots—it's a fit for sliding into a desk chair. Keep the bottom half muted so the manga panel on your chest is the only thing people focus on.</div>
             <a href="https://amzn.to/429cYAR" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
         </div>
     </div>
@@ -523,6 +477,7 @@
             </div>
             <div class="item-trust"><span>1.3K+ Ratings</span> <span>Soft Fleece</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> Oversized — order your normal size for the baggy look, size down if you want it fitted. Soft fleece interior.</div>
+            <div class="item-styling"><strong>The silhouette:</strong> Black cargo pants, chunky boots, and a ribbed white tank underneath. You aren't cosplaying—you're just wearing clothes that happen to have staples on them. Keep the bottom half silent so the hoodie does the heavy lifting.</div>
             <a href="https://amzn.to/4cc2jeR" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
         </div>
     </div>
@@ -553,6 +508,7 @@
             </div>
             <div class="item-trust"><span>Ripple Junction Licensed</span> <span>Prime Shipping</span> <span>1.8K+ Ratings</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> True to size. Ripple Junction uses standard US sizing — no surprises. Red cloud print is front-only. Black fleece holds up well after multiple washes.</div>
+            <div class="item-styling"><strong>The silhouette:</strong> Dark wash denim and minimal low-tops. The goal is stealth. You want people to have to do a double-take to realize you're wearing anime merch. No chains, no edgy accessories—the red clouds do enough.</div>
             <a href="https://amzn.to/4my4ehe" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
         </div>
     </div>
@@ -583,6 +539,7 @@
             </div>
             <div class="item-trust"><span>384 Ratings</span> <span>Kangaroo Pocket</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> Unisex — standard sizing. Order your normal size. Wash inside out to keep the print sharp. 90-day low price means Amazon fluctuates it — grab it when you see under $20.</div>
+            <div class="item-styling"><strong>The silhouette:</strong> High-waisted leggings or oversized denim shorts. It leans casual without trying hard. Throw your hair up. It’s a grocery-run fit that still looks intentional because of the graphic.</div>
             <a href="https://amzn.to/4280RnF" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
         </div>
     </div>
@@ -613,6 +570,7 @@
             </div>
             <div class="item-trust"><span>668 Ratings</span> <span>Zip-Up</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> True to size for a zip-up. Standard cut — not oversized, not slim. Full zip with pockets. The graphic holds up after washing but turn it inside out to be safe.</div>
+            <div class="item-styling"><strong>The silhouette:</strong> Black tactical joggers with zipper pockets and platform boots. Since it's a zip-up, leave it unzipped over a plain black tee. The layered look sells the cyberpunk aesthetic better than wearing it closed.</div>
             <a href="https://amzn.to/4mzshfQ" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
         </div>
     </div>
@@ -643,6 +601,7 @@
             </div>
             <div class="item-trust"><span>982 Ratings</span> <span>Cotton</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> Runs slightly oversized — order your normal size for the relaxed fit. Works with leggings, bike shorts, or jeans. Wash inside out. The price fluctuates — at $17.99 it's the lowest it's been in a month, grab it now.</div>
+            <div class="item-styling"><strong>The silhouette:</strong> Bike shorts, fuzzy socks, and absolutely zero effort. Do not wear real pants with this. It’s not a fashion statement, it’s a lifestyle choice for lazy Sundays and iced coffee runs.</div>
             <a href="https://amzn.to/4sADFcI" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
         </div>
     </div>
@@ -680,6 +639,7 @@
             </div>
             <div class="item-trust"><span>277 Ratings</span> <span>Soft Wash</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> Standard unisex. Order your normal size for a relaxed fit, size up if you want it intentionally baggy under a hoodie.</div>
+            <div class="item-styling"><strong>The silhouette:</strong> Worn as a base layer, not a standalone. Let the collar and sleeves peek out from under an open flannel or an oversized black cardigan. The floral graphic works best when it's partially hidden—like a secret only the observant will notice.</div>
             <a href="https://amzn.to/4tVjEyE" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
         </div>
     </div>
@@ -708,21 +668,6 @@
         <button type="submit" class="email-bar-btn">Add Me to the List</button>
     </form>
     <button class="email-bar-close" id="emailBarClose">&times;</button>
-</div>
-
-<div class="email-popup-overlay" id="emailPopup">
-    <div class="email-popup">
-        <button class="email-popup-close" id="emailPopupClose">&times;</button>
-        <div class="email-popup-icon">⬛</div>
-        <span class="email-popup-label">The Selection</span>
-        <h3 class="email-popup-title">Before You Go</h3>
-        <p class="email-popup-desc">Curated drops and setup inspiration. Once a week. No spam. Unsubscribe anytime.</p>
-        <form class="email-popup-form" id="emailPopupForm">
-            <input type="email" class="email-popup-input" placeholder="your@email.com" required>
-            <button type="submit" class="email-popup-btn">Join the Selection</button>
-        </form>
-        <button class="email-popup-decline" id="emailPopupDecline">No thanks, I'll figure it out alone</button>
-    </div>
 </div>
 
 <button id="btt">↑</button>
@@ -774,15 +719,6 @@
         });
     });
 
-    document.getElementById('emailPopupForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var email = this.querySelector('input').value;
-        subscribeEmail(email, function() {
-            document.getElementById('emailPopup').classList.remove('active');
-            sessionStorage.setItem('ml_subscribed', '1');
-        });
-    });
-
     var nav = document.getElementById('stickyNav');
     window.addEventListener('scroll', function() {
         nav.classList.toggle('scrolled', window.scrollY > 10);
@@ -802,7 +738,6 @@
         if (barShown) return;
         if (sessionStorage.getItem('ml_subscribed')) return;
         if (sessionStorage.getItem('ml_bar_closed')) return;
-        if (window.innerWidth < 768 && sessionStorage.getItem('ml_popup_seen')) return;
         if (window.scrollY > 800) {
             emailBar.classList.add('visible');
             barShown = true;
@@ -811,29 +746,6 @@
     document.getElementById('emailBarClose').addEventListener('click', function() {
         emailBar.classList.remove('visible');
         sessionStorage.setItem('ml_bar_closed', '1');
-    });
-
-    var popup = document.getElementById('emailPopup');
-    var popupFired = false;
-    document.addEventListener('mouseout', function(e) {
-        if (popupFired) return;
-        if (sessionStorage.getItem('ml_subscribed')) return;
-        if (window.innerWidth < 768) return;
-        if (e.clientY <= 0) {
-            popup.classList.add('active');
-            popupFired = true;
-            sessionStorage.setItem('ml_popup_seen', '1');
-            emailBar.classList.remove('visible');
-        }
-    });
-    document.getElementById('emailPopupClose').addEventListener('click', function() {
-        popup.classList.remove('active');
-    });
-    document.getElementById('emailPopupDecline').addEventListener('click', function() {
-        popup.classList.remove('active');
-    });
-    popup.addEventListener('click', function(e) {
-        if (e.target === popup) popup.classList.remove('active');
     });
 
     document.querySelectorAll('.pin-btn').forEach(function(btn) {
@@ -851,13 +763,6 @@
             );
         });
     });
-
-    if (window.innerWidth < 768 && !sessionStorage.getItem('ml_popup_seen') && !sessionStorage.getItem('ml_subscribed')) {
-        setTimeout(function() {
-            popup.classList.add('active');
-            sessionStorage.setItem('ml_popup_seen', '1');
-        }, 45000);
-    }
 
 })();
 </script>
