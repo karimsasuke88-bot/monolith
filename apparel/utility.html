@@ -22,13 +22,42 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Salomon Mens Speedcross 6 - Black",
+        "image": "https://i.ibb.co/QvZyfKCY/81-Br-Ez-BL-AC-SY625.jpg",
+        "description": "The standard techwear silhouette for the import scene. 4.7 stars, 1,282 ratings.",
+        "brand": {
+            "@type": "Brand",
+            "name": "Salomon"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://monolith-tech.vercel.app/apparel/utility.html#product-04",
+            "priceCurrency": "USD",
+            "price": "144.15",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "reviewCount": "1282"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
         "@type": "ItemList",
         "name": "Utility Techwear Drops",
         "description": "Curated Japanese streetwear utility layers",
-        "numberOfItems": 2,
+        "numberOfItems": 4,
         "itemListElement": [
             {"@type":"ListItem","position":1,"name":"Niepce Inc Tokyo Windbreaker","url":"https://monolith-tech.vercel.app/apparel/utility.html#product-01"},
-            {"@type":"ListItem","position":2,"name":"Niepce Inc Mechanized Cargo Joggers","url":"https://monolith-tech.vercel.app/apparel/utility.html#product-02"}
+            {"@type":"ListItem","position":2,"name":"Niepce Inc Mechanized Cargo Joggers","url":"https://monolith-tech.vercel.app/apparel/utility.html#product-02"},
+            {"@type":"ListItem","position":3,"name":"Streetwear Punk Joggers","url":"https://monolith-tech.vercel.app/apparel/utility.html#product-03"},
+            {"@type":"ListItem","position":4,"name":"Salomon Speedcross 6","url":"https://monolith-tech.vercel.app/apparel/utility.html#product-04"}
         ]
     }
     </script>
@@ -118,16 +147,6 @@
             transition: transform 0.6s ease;
         }
         .item-image-box:hover .item-image { transform: scale(1.05); }
-
-        .item-image-box .pin-btn {
-            position: absolute; bottom: 20px; right: 20px; background: #E60023;
-            color: #fff; padding: 8px 16px; font-size: 0.6rem; font-weight: 700;
-            letter-spacing: 1.5px; text-transform: uppercase; opacity: 0;
-            transition: opacity 0.3s; cursor: pointer; border-radius: 2px;
-            border: none; font-family: 'Inter', sans-serif; z-index: 10;
-        }
-        .item-image-box:hover .pin-btn { opacity: 1; }
-        .pin-btn:hover { background: #ad081b; }
 
         .item-badge {
             position: absolute; top: 20px; left: 20px; padding: 6px 12px;
@@ -267,7 +286,6 @@
         <div class="item-image-box">
             <div class="item-badge" data-type="utility">Shell Layer</div>
             <img src="https://i.ibb.co/Lmgffzf/61q3h-DIf-FDL-AC-SX569.jpg" class="item-image" alt="Black Japanese streetwear windbreaker with Tokyo kanji sleeve — water resistant techwear shell jacket" loading="eager">
-            <button class="pin-btn" data-pin-title="Tokyo Techwear Windbreaker — Water Resistant Shell" data-pin-desc="Water-resistant streetwear shell with Tokyo kanji on the left sleeve. Adjustable hem. Machine washable techwear. #Techwear #TokyoWindbreaker #StreetwearJacket #DarkAesthetic #JDMOutfit" data-pin-img="https://i.ibb.co/Lmgffzf/61q3h-DIf-FDL-AC-SX569.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">01</div>
@@ -290,7 +308,7 @@
             <div class="item-trust"><span>991 Ratings</span> <span>Machine Wash</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> Runs slightly boxy in the shoulders. Size down if you want it tight to the waist, order your normal size for the standard techwear drape.</div>
             <div class="item-styling"><strong>The silhouette:</strong> The Heavy Urban pants, a plain black compression tee, and chunky black boots. Leave the jacket unzipped. The Tokyo kanji peeks out just enough to catch the light without being a billboard.</div>
-            <a href="https://amzn.to/48bbjOV" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
+            <a href="/go/tokyo-windbreaker" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
         </div>
     </div>
 
@@ -298,7 +316,6 @@
         <div class="item-image-box">
             <div class="item-badge" data-type="utility">Base Layer</div>
             <img src="https://i.ibb.co/PZ79QFrT/71j-YIubz4g-L-AC-SX679.jpg" class="item-image" alt="Black Japanese techwear cargo joggers with mechanized movement kanji straps — heavy duty streetwear pants" loading="lazy">
-            <button class="pin-btn" data-pin-title="Mechanized Techwear Cargo Pants — Machine Washable" data-pin-desc="Heavy duty cotton blend techwear joggers. Kanji translates to Mechanized Movement. Machine washable. 900+ ratings. #TechwearPants #CargoJoggers #JDMOutfit #DarkStreetwear #TechwearFit" data-pin-img="https://i.ibb.co/PZ79QFrT/71j-YIubz4g-L-AC-SX679.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">02</div>
@@ -321,14 +338,13 @@
             <div class="item-trust"><span>924 Ratings</span> <span>Elastic Waist</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> Relaxed silhouette. Order your normal size. The straps are adjustable, but the waist is elastic—no guessing games with rigid techwear sizing.</div>
             <div class="item-styling"><strong>The silhouette:</strong> The Variable windbreaker layered over a white base tee, paired with these exact pants. Black combat boots or high-top runners. The outfit reads like a uniform, not a costume.</div>
-            <a href="https://amzn.to/4vKezLl" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
+            <a href="/go/mechanized-cargos" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
         </div>
     </div> 
         <div id="product-03" class="gallery-item">
         <div class="item-image-box">
             <div class="item-badge" data-type="utility">Streetwear Punk</div>
             <img src="https://i.ibb.co/YBmWLnhM/61-Erz-ORW5-L-AC-SX679.jpg" class="item-image" alt="Black Japanese streetwear joggers with red ripped slashes and drop down iron ring — aggressive base layer for techwear fits" loading="lazy">
-            <button class="pin-btn" data-pin-title="Japanese Streetwear Jogger — Real Metal Hardware" data-pin-desc="Japanese streetwear joggers with red slashes and drop-down iron ring. Preshrunk cotton. Prime shipping. See the fit on MONOLITH. #TechwearPants #StreetwearJoggers #JDMOutfit #JapaneseStreetwear #DarkAesthetic" data-pin-img="https://i.ibb.co/YBmWLnhM/61-Erz-ORW5-L-AC-SX679.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">03</div>
@@ -351,14 +367,13 @@
             <div class="item-trust"><span>663 Ratings</span> <span>100% Cotton</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> True to standard US sizing. Loose fit. No bulky side pockets to ruin the lines of your techwear jacket.</div>
             <div class="item-styling"><strong>The silhouette:</strong> Let the pants do the heavy lifting. The red slashes catch the light when you walk. Pair them with a plain black compression tee and The Variable windbreaker. The iron ring peeks out when you sit down. Black combat boots finish the edge.</div>
-            <a href="https://amzn.to/4vBevxe" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
+            <a href="/go/streetwear-punk-joggers" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
         </div>
     </div> 
          <div id="product-04" class="gallery-item">
         <div class="item-image-box">
             <div class="item-badge" data-type="utility">The Standard</div>
             <img src="https://i.ibb.co/QvZyfKCY/81-Br-E9z-BL-AC-SY625.jpg" class="item-image" alt="Black Salomon Speedcross 6 side profile — the standard techwear silhouette for the import scene" loading="lazy">
-            <button class="pin-btn" data-pin-title="Salomon Speedcross 6 — The JDM Techwear Standard" data-pin-desc="The Speedcross 6 is the most copied shoe in techwear. The chunky sole silhouette is the standard for the import scene. Prime shipping. See the fit on MONOLITH. #SalomonSpeedcross #TechwearShoe #JDMOutfit #DarkAesthetic #StreetwearShoes" data-pin-img="https://i.ibb.co/QvZyfKCY/81-Br-Ez-BL-AC-SY625.jpg">Save</button>
         </div>
         <div class="item-info">
             <div class="item-number">04</div>
@@ -380,7 +395,7 @@
             <div class="item-trust"><span>1.28K Ratings</span> <span>No Heel</span></div>
             <div class="item-fit-note"><strong>Fit:</strong> Salomons run extremely narrow in the toe box. Order a half-size up if you have wide feet. It’s the cost of the silhouette.</div>
             <div class="item-styling"><strong>The silhouette:</strong> The quiet foundation. Let the jacket and pants do the talking. The shoe just anchors the bottom half of the fit. Black combat boots finish the edge.</div>
-            <a href="https://amzn.to/42gsXNA" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
+            <a href="/go/salomon-speedcross-6" target="_blank" rel="nofollow noopener noreferrer" class="btn-view">Secure on Amazon →</a>
         </div>
     </div>
 
@@ -411,22 +426,6 @@
     }, { passive: true });
     btt.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    document.querySelectorAll('.pin-btn').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            var title = btn.getAttribute('data-pin-title') || '';
-            var desc = btn.getAttribute('data-pin-desc') || '';
-            var img = btn.getAttribute('data-pin-img') || '';
-            var url = window.location.href;
-            window.open(
-                'https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(url)
-                + '&description=' + encodeURIComponent(title + '\n\n' + desc)
-                + '&media=' + encodeURIComponent(img),
-                'pinWindow', 'width=750,height=550,left=200,top=100'
-            );
-        });
     });
 </script>
 
